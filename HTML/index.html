@@ -1,80 +1,128 @@
-<!DOCTYPE html>  
-<html lang="en">  
-<head>  
-    <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <link rel="stylesheet" href="styles.css">  
-    <title>Cửa Hàng Laptop/PC</title>  
-</head>  
-<body>  
-    <header>  
-        <h1>Cửa Hàng Laptop/PC</h1>  
-        <nav>  
-            <ul>  
-                <li><a href="#">Trang Chủ</a></li>  
-                <li><a href="#">Sản Phẩm</a></li>  
-                <li><a href="#">Liên Hệ</a></li>  
-                <li><a href="#" id="login">Đăng Nhập</a></li>  
-            </ul>  
-            <div class="search-bar">  
-                <input type="text" placeholder="Tìm kiếm sản phẩm..." id="searchInput">  
-                <button onclick="search()">Tìm kiếm</button>  
-            </div>  
-        </nav>  
-    </header>  
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cửa Hàng Bán PC & Laptop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #555;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .product {
+            background-color: #fff;
+            padding: 20px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .product h3 {
+            color: #3498db;
+        }
+        .product p {
+            font-size: 14px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
 
-    <main>  
-        <section class="product-section">  
-            <h2>Sản Phẩm Nổi Bật</h2>  
-            <div class="products" id="productList">  
-                <div class="product-card">  
-                    <img src="laptop.jpg" alt="Laptop A">  
-                    <h3>Laptop A</h3>  
-                    <p>Giá: 20,000,000 VNĐ</p>  
-                    <p>Đánh giá: ⭐⭐⭐⭐☆</p>  
-                    <button onclick="addToCart('Laptop A', 20000000)">Thêm vào giỏ</button>  
-                </div>  
-                <div class="product-card">  
-                    <img src="pc.jpg" alt="PC B">  
-                    <h3>PC B</h3>  
-                    <p>Giá: 15,000,000 VNĐ</p>  
-                    <p>Đánh giá: ⭐⭐⭐⭐⭐</p>  
-                    <button onclick="addToCart('PC B', 15000000)">Thêm vào giỏ</button>  
-                </div>  
-                <!-- Thêm nhiều sản phẩm khác ở đây -->  
-            </div>  
-        </section>  
+<header>
+    <h1>Cửa Hàng Bán PC & Laptop Cao Cấp</h1>
+    <p>Chất lượng, Uy tín, Giá cả hợp lý</p>
+</header>
 
-        <aside id="cart">  
-            <h2>Giỏ Hàng</h2>  
-            <ul id="cartItems"></ul>  
-            <p id="totalPrice">Tổng: 0 VNĐ</p>  
-            <button id="checkoutButton" onclick="checkout()">Thanh Toán</button>  
-        </aside>  
-    </main>  
+<nav>
+    <a href="#home">Trang Chủ</a>
+    <a href="#pc">PC Gaming</a> 
+    <a href="#laptop">Laptop</a>
+    <a herf="LK">Linh Kiện</a>
+    <a href="#PK">Phụ Kiện </a>
+    <a href="#news">Tin Tức</a>
+    <a href="#contact">Liên Hệ</a>
+</nav>
 
-    <section id="loginForm" class="hidden">  
-        <h2>Đăng Nhập</h2>  
-        <form action="#" method="POST">  
-            <label for="username">Tên đăng nhập:</label>  
-            <input type="text" id="username" name="username" required>  
+<div class="container">
+    <section id="pc">
+        <h2>PC Gaming</h2>
+        <div class="product">
+            <h3>PC Gaming Xtreme</h3>
+            <p>CPU: Intel Core i9 | RAM: 32GB | VGA: RTX 3080</p>
+            <p>Giá: 50,000,000 VND</p>
+        </div>
+        <div class="product">
+            <h3>PC Gaming Elite</h3>
+            <p>CPU: AMD Ryzen 9 | RAM: 32GB | VGA: RX 6900XT</p>
+            <p>Giá: 48,000,000 VND</p>
+        </div>
+    </section>
 
-            <label for="password">Mật khẩu:</label>  
-            <input type="password" id="password" name="password" required>  
+    <section id="laptop">
+        <h2>Laptop</h2>
+        <div class="product">
+            <h3>Laptop Dell XPS 15</h3>
+            <p>CPU: Intel Core i7 | RAM: 16GB | SSD: 512GB</p>
+            <p>Giá: 40,000,000 VND</p>
+        </div>
+        <div class="product">
+            <h3>MacBook Pro 14"</h3>
+            <p>Chip: Apple M1 Pro | RAM: 16GB | SSD: 1TB</p>
+            <p>Giá: 60,000,000 VND</p>
+        </div>
+    </section>
+        <section id="LK">
+            <h2>Linh Kiện</h2>
+            <div class="product">
+                <h3>GTX 4060Ti</h3>
+                <p>Hãng:NVIDIA</p>
+                <p>Giá: 11.000.000 VND</p>
+            </div>
+    </section>
+    <div class="PHUKIEN">
+        <sectuion id="PK">
+            <h2>Phụ Kiện</h2>
+            <div class="product">
+                <h3>Tai Nghe</h3>
+                <p>Hãng: Asus</p>
+                <p>Giá: 1.250.000 VND</p>
+            </div>
+        </sectuion>
+    </div>
+</div>
 
-            <button type="submit">Đăng Nhập</button>  
-        </form>  
-    </section>  
+<footer>
+    <p>&copy; 2024 Cửa Hàng Bán PC & Laptop.</p>
+</footer>
 
-    <footer>  
-        <p>&copy; 2023 Cửa Hàng Laptop/PC. Tất cả quyền được bảo lưu.</p>  
-        <div class="social-media">  
-            <a href="https://facebook.com">Facebook</a> |  
-            <a href="https://twitter.com">Twitter</a> |  
-            <a href="https://instagram.com">Instagram</a>  
-        </div>  
-    </footer>  
-
-    <script src="script.js"></script>  
-</body>  
+</body>
 </html>
