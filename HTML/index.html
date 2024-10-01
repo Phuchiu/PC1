@@ -17,6 +17,10 @@
             padding: 10px 0;
             text-align: center;
         }
+        header img {
+            display: block;
+            margin: 0 auto;
+        }
         nav {
             background-color: #555;
             padding: 10px;
@@ -39,12 +43,14 @@
             margin: 10px 0;
             border: 1px solid #ddd;
             border-radius: 5px;
+            text-align: center;
         }
         .product h3 {
             color: #3498db;
         }
-        .product p {
-            font-size: 14px;
+        .product img {
+            width: 200px;
+            height: auto;
         }
         footer {
             background-color: #333;
@@ -58,66 +64,65 @@
 <body>
 
 <header>
+    <img src="logo.png" alt="Logo của cửa hàng" width="100" height="100">
     <h1>Cửa Hàng Bán PC & Laptop Cao Cấp</h1>
     <p>Chất lượng, Uy tín, Giá cả hợp lý</p>
 </header>
 
 <nav>
     <a href="#home">Trang Chủ</a>
-    <a href="#pc">PC Gaming</a> 
-    <a href="#laptop">Laptop</a>
-    <a herf="LK">Linh Kiện</a>
-    <a href="#PK">Phụ Kiện </a>
-    <a href="#news">Tin Tức</a>
-    <a href="#contact">Liên Hệ</a>
+    <a href="pc.html">PC Gaming</a>
+    <a href="laptop.html">Laptop</a> 
+    <a href="linhkien.html">Linh Kiện</a> 
+    <a href="phukien.html">Phụ Kiện</a>
+    <a href="tintuc.html">Tin Tức</a>
+    <a href="lienhe.html">Liên Hệ</a>
 </nav>
 
 <div class="container">
     <section id="pc">
         <h2>PC Gaming</h2>
         <div class="product">
+            <img src="https://th.bing.com/th/id/OIP.liRt3Ifxcsxzz-g14RxfHgHaHa?rs=1&pid=ImgDetMain" alt="PC Gaming Xtreme">
             <h3>PC Gaming Xtreme</h3>
             <p>CPU: Intel Core i9 | RAM: 32GB | VGA: RTX 3080</p>
             <p>Giá: 50,000,000 VND</p>
+            <p><a href="checkout.html" style="text-decoration: none;"><strong>Mua Ngay</strong></a> </p>
+
         </div>
         <div class="product">
+            <img src="https://th.bing.com/th/id/OIP.XwcxgJRl07pt3QCNdt2z4AHaHa?rs=1&pid=ImgDetMain" alt="PC Gaming Elite">
             <h3>PC Gaming Elite</h3>
             <p>CPU: AMD Ryzen 9 | RAM: 32GB | VGA: RX 6900XT</p>
             <p>Giá: 48,000,000 VND</p>
         </div>
     </section>
 
+    <section id="MH"></section>
+        <h2>Màn Hình</h2>
+        <div class="product">
+            <img src="https://th.bing.com/th/id/OIP.toOnriUBnpki-bRI5XM36gHaHa?rs=1&pid=ImgDetMain" alt="VG27AQ3A">
+            <h3>VG27AQ3A</h3>
+            <p>Hãng: ASUS</p>
+            <p>Giá: 5,600,000 VND</p>
+        </div>
+    </section>
+
     <section id="laptop">
         <h2>Laptop</h2>
         <div class="product">
+            <img src="https://th.bing.com/th/id/OIP.7ueGsxQosGD2Hi3F7m3IRwHaG1?rs=1&pid=ImgDetMain" alt="Laptop Dell XPS 15">
             <h3>Laptop Dell XPS 15</h3>
             <p>CPU: Intel Core i7 | RAM: 16GB | SSD: 512GB</p>
             <p>Giá: 40,000,000 VND</p>
         </div>
         <div class="product">
+            <img src="https://th.bing.com/th/id/OIP.CeF1aX0L5NTTOJeceR67_gHaE0?rs=1&pid=ImgDetMain" alt="MacBook Pro 14">
             <h3>MacBook Pro 14"</h3>
             <p>Chip: Apple M1 Pro | RAM: 16GB | SSD: 1TB</p>
             <p>Giá: 60,000,000 VND</p>
         </div>
     </section>
-        <section id="LK">
-            <h2>Linh Kiện</h2>
-            <div class="product">
-                <h3>GTX 4060Ti</h3>
-                <p>Hãng:NVIDIA</p>
-                <p>Giá: 11.000.000 VND</p>
-            </div>
-    </section>
-    <div class="PHUKIEN">
-        <sectuion id="PK">
-            <h2>Phụ Kiện</h2>
-            <div class="product">
-                <h3>Tai Nghe</h3>
-                <p>Hãng: Asus</p>
-                <p>Giá: 1.250.000 VND</p>
-            </div>
-        </sectuion>
-    </div>
 </div>
 
 <footer>
