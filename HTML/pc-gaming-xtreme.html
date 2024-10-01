@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC Gaming Xtreme</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+        .product-image {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .swiper {
+            width: 100%;
+            height: 800px; /* Điều chỉnh chiều cao của slider nếu cần */
+        }
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>PC Gaming Xtreme</h1>
+</header>
+
+<div class="container">
+    <!-- Slider -->
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="https://th.bing.com/th/id/OIP.PnHeWEbsx1z3tN6V2HR1fAHaHa?rs=1&pid=ImgDetMain" alt="PC Gaming Xtreme" class="product-image"></div>
+            <div class="swiper-slide"><img src="https://i5.walmartimages.com/asr/10a01e82-216e-48b7-bea3-3645023c3d55.c46be4ff61f5c0c77cf25097e345af1e.jpeg" alt="PC Gaming Xtreme" class="product-image"></div>
+            <div class="swiper-slide"><img src="https://www.bhphotovideo.com/images/images2000x2000/cyberpowerpc_gxi11460cpg_gamer_xtreme_gaming_desktop_1625801.jpg" alt="PC Gaming Xtreme" class="product-image"></div>
+        </div>
+        <!-- Thêm nút điều hướng -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <!-- Thêm phân trang -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <h2>Thông Tin Sản Phẩm</h2>
+    <p><strong>CPU:</strong> Intel Core i9</p>
+    <p><strong>RAM:</strong> 32GB</p>
+    <p><strong>VGA:</strong> RTX 3080</p>
+    <p><strong>Giá:</strong> 50,000,000 VND</p>
+
+    <p><a href="checkout.html" style="text-decoration: none;"><strong>Mua Ngay</strong></a> </p>
+</div>
+
+<footer>
+    <p>&copy; 2024 Cửa Hàng Bán PC & Laptop.</p>
+</footer>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    const swiper = new Swiper('.swiper', {
+        loop: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+</script>
+
+</body>
+</html>
