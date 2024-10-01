@@ -1,361 +1,44 @@
-/* Reset and Global Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+body {  
+    font-family: Arial, sans-serif;  
+    margin: 0;  
+    padding: 0;  
+}  
 
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-}
+header {  
+    background-color: #4CAF50;  
+    color: white;  
+    text-align: center;  
+    padding: 1em 0;  
+}  
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
+main {  
+    display: flex;  
+    padding: 20px;  
+}  
 
-/* Header */
-header {
-    background-color: #20232a;
-    color: white;
-    padding: 15px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+.products {  
+    flex: 1;  
+    display: grid;  
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));  
+    gap: 20px;  
+}  
 
-header .logo h1 {
-    font-size: 24px;
-}
+.product {  
+    border: 1px solid #ddd;  
+    border-radius: 5px;  
+    padding: 10px;  
+    text-align: center;  
+}  
 
-header .logo span {
-    color: #61dafb;
-}
+.product img {  
+    max-width: 100%;  
+    height: auto;  
+}  
 
-/* Navigation Bar */
-nav {
-    flex-grow: 1;
-}
-
-.navbar {
-    list-style: none;
-    display: flex;
-    justify-content: flex-end;
-    gap: 20px;
-}
-
-.navbar li {
-    display: inline-block;
-}
-
-.navbar li a {
-    color: white;
-    font-size: 16px;
-    transition: color 0.3s;
-}
-
-.navbar li a:hover {
-    color: #61dafb;
-}
-
-/* Hero Section */
-.hero {
-    display: flex;
-    align-items: center;
-    padding: 80px 30px;
-    background: linear-gradient(135deg, #61dafb 40%, #1c91d0 100%);
-    color: white;
-}
-
-.hero-text {
-    flex: 1;
-    animation: fadeInLeft 1s ease-in-out;
-}
-
-.hero-text h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-}
-
-.hero-text h2 span {
-    color: #20232a;
-}
-
-.hero-text p {
-    font-size: 18px;
-    margin-bottom: 30px;
-}
-
-.hero-text .btn {
-    background-color: #20232a;
-    color: white;
-    padding: 15px 30px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-}
-
-.hero-text .btn:hover {
-    background-color: #333;
-}
-
-.hero-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    animation: fadeInRight 1s ease-in-out;
-}
-
-.hero-image img {
-    width: 80%;
-    border-radius: 10px;
-}
-
-/* Tabs */
-.container {
-    padding: 50px 30px;
-}
-
-.tabs {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
-}
-
-.tab {
-    background-color: #f1f1f1;
-    border: none;
-    padding: 15px 30px;
-    cursor: pointer;
-    margin: 0 5px;
-    font-size: 16px;
-    transition: background-color 0.3s;
-}
-
-.tab.active,
-.tab:hover {
-    background-color: #61dafb;
-    color: white;
-}
-
-/* Product List */
-.product-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-}
-
-.product-item {
-    background-color: white;
-    width: 300px;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
-
-.product-item:hover {
-    transform: translateY(-10px);
-}
-
-.product-item img {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
-
-.product-item h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-.product-item p {
-    font-size: 14px;
-    margin-bottom: 10px;
-}
-
-.product-item .price {
-    font-size: 18px;
-    font-weight: 700;
-    color: #e91e63;
-    margin-bottom: 15px;
-}
-
-.product-item .btn {
-    background-color: #61dafb;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s;
-}
-
-.product-item .btn:hover {
-    background-color: #1c91d0;
-}
-
-/* Modal */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1001;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.7);
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 5% auto;
-    padding: 30px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 800px;
-    border-radius: 10px;
-    position: relative;
-}
-
-.close-btn {
-    color: #aaa;
-    position: absolute;
-    top: 15px;
-    right: 25px;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.close-btn:hover,
-.close-btn:focus {
-    color: black;
-}
-
-.modal-body {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.modal-body img {
-    width: 100%;
-    max-width: 400px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.modal-info {
-    flex: 1;
-    padding-left: 20px;
-}
-
-.modal-info h2 {
-    font-size: 28px;
-    margin-bottom: 15px;
-}
-
-.modal-info p {
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-
-.modal-info .price {
-    font-size: 22px;
-    font-weight: 700;
-    color: #e91e63;
-    margin-bottom: 20px;
-}
-
-.modal-info .btn {
-    background-color: #61dafb;
-    color: white;
-    padding: 12px 25px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-}
-
-.modal-info .btn:hover {
-    background-color: #1c91d0;
-}
-
-/* Footer */
-footer {
-    background-color: #20232a;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-/* Animations */
-@keyframes fadeInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes fadeInRight {
-    from {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .hero-text,
-    .hero-image {
-        flex: none;
-    }
-
-    .hero-text {
-        animation: fadeInUp 1s ease-in-out;
-    }
-
-    .hero-image {
-        animation: fadeInUp 1s ease-in-out;
-        margin-top: 20px;
-    }
-
-    .modal-body {
-        flex-direction: column;
-    }
-
-    .modal-info {
-        padding-left: 0;
-        margin-top: 20px;
-    }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+#cart {  
+    width: 300px;  
+    margin-left: 20px;  
+    border: 1px solid #ddd;  
+    border-radius: 5px;  
+    padding: 10px;  
 }
