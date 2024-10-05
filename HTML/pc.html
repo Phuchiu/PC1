@@ -14,7 +14,7 @@
         header {
             background-color: #333;
             color: #fff;
-            padding: 10px 0;
+            padding: 20px 0;
             text-align: center;
         }
         .container {
@@ -23,12 +23,26 @@
             padding: 20px;
             background-color: #fff;
             border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         .product {
+            display: inline-block;
+            width: calc(33.333% - 20px);
             background-color: #f9f9f9;
             padding: 15px;
-            margin: 10px 0;
+            margin: 10px;
             border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            vertical-align: top;
+        }
+        .product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .product img {
+            width: 100%;
+            height: auto;
             border-radius: 5px;
         }
         .product h3 {
@@ -41,6 +55,20 @@
             padding: 10px 0;
             margin-top: 20px;
         }
+        .purchase-button, .info-button {
+            display: inline-block;
+            padding: 10px 15px;
+            margin-top: 10px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .purchase-button:hover, .info-button:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body>
@@ -52,22 +80,57 @@
 <div class="container">
     <section id="pc">
         <h2>Danh Sách PC Gaming</h2>
-        <div class="product">
+        
+        <div class="product" data-info="Thông tin chi tiết: CPU: Intel Core i9 | RAM: 32GB | VGA: RTX 3080">
+            <img src="https://th.bing.com/th/id/OIP.liRt3Ifxcsxzz-g14RxfHgHaHa?rs=1&pid=ImgDetMain" alt="PC Gaming Xtreme">
             <h3>PC Gaming Xtreme</h3>
-            <p>CPU: Intel Core i9 | RAM: 32GB | VGA: RTX 3080</p>
             <p>Giá: 50,000,000 VND</p>
+            <p><a href="#" class="info-button"><strong>Thông Tin Chi Tiết</strong></a></p>
+            <p><a href="#" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a></p>
         </div>
-        <div class="product">
+
+        <div class="product" data-info="Thông tin chi tiết: CPU: AMD Ryzen 9 | RAM: 32GB | VGA: RX 6900XT">
+            <img src="https://th.bing.com/th/id/OIP.XwcxgJRl07pt3QCNdt2z4AHaHa?rs=1&pid=ImgDetMain" alt="PC Gaming Elite">
             <h3>PC Gaming Elite</h3>
-            <p>CPU: AMD Ryzen 9 | RAM: 32GB | VGA: RX 6900XT</p>
             <p>Giá: 48,000,000 VND</p>
+            <p><a href="#" class="info-button"><strong>Thông Tin Chi Tiết</strong></a></p>
+            <p><a href="#" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a></p>
         </div>
+
     </section>
 </div>
 
 <footer>
     <p>&copy; 2024 Cửa Hàng Bán PC & Laptop.</p>
 </footer>
+
+<script>
+    // Xác nhận khi người dùng nhấn "Mua Ngay"
+    const purchaseButtons = document.querySelectorAll('.purchase-button');
+    purchaseButtons.forEach(button => {
+        button.addEventListener('click', function(event) {
+            event.preventDefault(); // Ngăn chặn hành động mặc định của liên kết
+            const confirmation = confirm("Bạn có chắc chắn muốn mua sản phẩm này không?");
+            if (confirmation) {
+                const url = this.getAttribute('data-url'); // Lấy URL từ thuộc tính data-url
+                window.location.href = url; // Chuyển hướng đến trang thanh toán
+            }
+        });
+    });
+
+    // Hiển thị thông tin chi tiết sản phẩm với xác nhận
+    const infoButtons = document.querySelectorAll('.info-button');
+    infoButtons.forEach(button => {
+        button.addEventListener('click', function(event) {
+            event.preventDefault(); // Ngăn chặn hành động mặc định của liên kết
+            const productInfo = this.parentElement.parentElement.getAttribute('data-info'); // Lấy thông tin sản phẩm
+            const confirmation = confirm("Bạn có muốn xem thông tin chi tiết sản phẩm này không?");
+            if (confirmation) {
+                alert(productInfo); // Hiển thị thông tin chi tiết
+            }
+        });
+    });
+</script>
 
 </body>
 </html>

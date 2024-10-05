@@ -31,6 +31,14 @@
             margin: 0 15px;
             text-decoration: none;
             font-weight: bold;
+            padding: 10px 15px; /* Thêm padding để tạo ô cho các liên kết */
+            border-radius: 5px; /* Bo tròn các góc */
+            transition: background-color 0.3s, color 0.3s; /* Hiệu ứng chuyển màu */
+            display: inline-block; /* Để các liên kết trở thành ô */
+        }
+        nav a:hover {
+            background-color: #1e90ff; /* Màu nền khi hover là xanh nước biển */
+            color: white; /* Giữ màu chữ là trắng khi hover */
         }
         .container {
             max-width: 1200px;
@@ -51,6 +59,25 @@
         .product img {
             width: 200px;
             height: auto;
+            transition: transform 0.2s; /* Hiệu ứng zoom */
+        }`
+        .product img:hover {
+            transform: scale(1.1); /* Zoom ảnh khi hover */
+        }
+        /* Hiệu ứng cho các liên kết Mua Ngay và Thông Tin Chi Tiết */
+        .product a {
+            display: inline-block;
+            padding: 10px 15px;
+            margin: 5px 0;
+            background-color: #3498db;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .product a:hover {
+            background-color: #2980b9; /* Màu nền khi hover */
+            transform: scale(1.05); /* Tăng kích thước khi hover */
         }
         footer {
             background-color: #333;
@@ -87,26 +114,30 @@
             <h3>PC Gaming Xtreme</h3>
             <p>CPU: Intel Core i9 | RAM: 32GB | VGA: RTX 3080</p>
             <p>Giá: 50,000,000 VND</p>
-            <p><a href="pc-gaming-xtreme.html" style="text-decoration: none;"><strong>Thông Tin Chi Tiết</strong></a> </p>
-            <p><a href="checkout.html" style="text-decoration: none;"><strong>Mua Ngay</strong></a> </p>
-
+            <p><a href="pc-gaming-xtreme.html"><strong>Thông Tin Chi Tiết</strong></a></p>
+            <p><a href="#" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a></p>
         </div>
         <div class="product">
             <img src="https://th.bing.com/th/id/OIP.XwcxgJRl07pt3QCNdt2z4AHaHa?rs=1&pid=ImgDetMain" alt="PC Gaming Elite">
             <h3>PC Gaming Elite</h3>
             <p>CPU: AMD Ryzen 9 | RAM: 32GB | VGA: RX 6900XT</p>
             <p>Giá: 48,000,000 VND</p>
+            <p><a href="pc-gaming-elite.html"><strong>Thông Tin Chi Tiết</strong></a></p>
+            <p><a href="#" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a></p>
         </div>
     </section>
 
-    <section id="MH"></section>
+    <section id="ManHinh">
         <h2>Màn Hình</h2>
         <div class="product">
             <img src="https://th.bing.com/th/id/OIP.toOnriUBnpki-bRI5XM36gHaHa?rs=1&pid=ImgDetMain" alt="VG27AQ3A">
             <h3>VG27AQ3A</h3>
             <p>Hãng: ASUS</p>
             <p>Giá: 5,600,000 VND</p>
+            <p><a href="pc-gaming-elite.html"><strong>Thông Tin Chi Tiết</strong></a></p>
+            <p><a href="#" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a></p>
         </div>
+       
     </section>
 
     <section id="laptop">
@@ -116,12 +147,32 @@
             <h3>Laptop Dell XPS 15</h3>
             <p>CPU: Intel Core i7 | RAM: 16GB | SSD: 512GB</p>
             <p>Giá: 40,000,000 VND</p>
+            <p><a href="laptop-dell-xps-15.html"><strong>Thông Tin Chi Tiết</strong></a></p>
+            <p><a href="#" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a></p>
         </div>
         <div class="product">
             <img src="https://th.bing.com/th/id/OIP.CeF1aX0L5NTTOJeceR67_gHaE0?rs=1&pid=ImgDetMain" alt="MacBook Pro 14">
             <h3>MacBook Pro 14"</h3>
             <p>Chip: Apple M1 Pro | RAM: 16GB | SSD: 1TB</p>
             <p>Giá: 60,000,000 VND</p>
+            <p><a href="macbook-pro-14.html"><strong>Thông Tin Chi Tiết</strong></a></p>
+            <p><a href="#" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a></p>
+        </div>
+        <div class="product">
+            <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:0:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/a/s/asus-rog-strix-g15-g513qr-hq264t-r9-5900hx-3_a4eff41c56f64ef99fe4055a5b2276bf_grande.png" alt="Asus ROG Strix G15">
+            <h3>Asus ROG Strix G15</h3>
+            <p>CPU: Ryzen 9 5900HX | GPU: RTX 3070 | RAM: 16GB | SSD: 1TB</p>
+            <p>Giá: 45,000,000 VND</p>
+            <p><a href="asus-rog-strix-g15.html"><strong>Thông Tin Chi Tiết</strong></a></p>
+            <p><a href="#" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a></p>
+        </div>
+        <div class="product">
+            <img src="https://cdn.tgdd.vn/Products/Images/44/327974/asus-fx507zc4-i7-hn181w-16-750x500.jpg" alt="Asus TUF Gaming F15">
+            <h3>Asus TUF Gaming F15</h3>
+            <p>CPU: Intel i7-12700H | GPU: RTX 3060 | RAM: 16GB | SSD: 512GB</p>
+            <p>Giá: 40,000,000 VND</p>
+            <p><a href="asus-tuf-gaming-f15.html"><strong>Thông Tin Chi Tiết</strong></a></p>
+            <p><a href="#" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a></p>
         </div>
     </section>
 </div>
@@ -129,6 +180,20 @@
 <footer>
     <p>&copy; 2024 Cửa Hàng Bán PC & Laptop.</p>
 </footer>
+<script>
+    // Xác nhận mua hàng
+    const purchaseButtons = document.querySelectorAll('.purchase-button');
+    purchaseButtons.forEach(button => {
+        button.addEventListener('click', function(event) {
+            event.preventDefault(); // Ngăn chặn hành động mặc định của liên kết
+            const confirmation = confirm("Bạn có chắc chắn muốn mua sản phẩm này không?");
+            if (confirmation) {
+                const url = this.getAttribute('data-url'); // Lấy URL từ thuộc tính data-url
+                window.location.href = url; // Chuyển hướng đến trang thanh toán
+            }
+        });
+    });
+</script>
 
 </body>
 </html>

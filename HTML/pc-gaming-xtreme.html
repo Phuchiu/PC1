@@ -39,6 +39,21 @@
             justify-content: center;
             align-items: center;
         }
+        /* Hiệu ứng cho nút Mua Ngay */
+        #purchase-button {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+            margin-top: 20px; /* Thêm khoảng cách phía trên nút */
+        }
+        #purchase-button:hover {
+            background-color: #2980b9; /* Màu nền khi hover */
+            transform: scale(1.05); /* Tăng kích thước khi hover */
+        }
         footer {
             background-color: #333;
             color: white;
@@ -75,7 +90,7 @@
     <p><strong>VGA:</strong> RTX 3080</p>
     <p><strong>Giá:</strong> 50,000,000 VND</p>
 
-    <p><a href="checkout.html" style="text-decoration: none;"><strong>Mua Ngay</strong></a> </p>
+    <p><a href="#" id="purchase-button"><strong>Mua Ngay</strong></a></p>
 </div>
 
 <footer>
@@ -98,6 +113,15 @@
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
+    });
+
+    // Xác nhận mua hàng
+    document.getElementById('purchase-button').addEventListener('click', function(event) {
+        event.preventDefault(); // Ngăn chặn hành động mặc định của liên kết
+        const confirmation = confirm("Bạn có chắc chắn muốn mua sản phẩm này không?");
+        if (confirmation) {
+            window.location.href = 'checkout.html'; // Chuyển hướng đến trang thanh toán
+        }
     });
 </script>
 

@@ -31,6 +31,25 @@
             padding: 10px 0;
             margin-top: 20px;
         }
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
     </style>
 </head>
 <body>
@@ -46,7 +65,7 @@
     <p>Điện thoại: 0123-456-789</p>
     
     <h3>Gửi Thông Điệp</h3>
-    <form>
+    <form id="contactForm">
         <label for="name">Tên:</label><br>
         <input type="text" id="name" name="name" required><br><br>
         <label for="email">Email:</label><br>
@@ -60,6 +79,34 @@
 <footer>
     <p>&copy; 2024 Cửa Hàng Bán PC & Laptop.</p>
 </footer>
+
+<script>
+    // Bắt sự kiện gửi form và xử lý với JavaScript
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Ngăn chặn hành vi gửi form mặc định
+
+        // Lấy giá trị của các trường nhập liệu
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        // Kiểm tra xem các trường có trống không
+        if (name === "" || email === "" || message === "") {
+            alert("Vui lòng điền đầy đủ thông tin.");
+            return;
+        }
+
+        // Xác nhận gửi form
+        const confirmation = confirm("Bạn có chắc chắn muốn gửi tin nhắn này?");
+        if (confirmation) {
+            // Xử lý gửi thành công (ở đây chỉ là thông báo)
+            alert("Cảm ơn bạn, " + name + "! Tin nhắn của bạn đã được gửi thành công.");
+            
+            // Sau khi xử lý có thể reset lại form
+            document.getElementById('contactForm').reset();
+        }
+    });
+</script>
 
 </body>
 </html>

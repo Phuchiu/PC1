@@ -11,35 +11,90 @@
             margin: 0;
             padding: 0;
         }
+
         header {
             background-color: #333;
             color: #fff;
-            padding: 10px 0;
+            padding: 20px 0;
             text-align: center;
         }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
         .container {
             max-width: 1200px;
             margin: 20px auto;
             padding: 20px;
             background-color: #fff;
-            border-radius: 5px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
         .product {
             background-color: #f9f9f9;
-            padding: 15px;
-            margin: 10px 0;
+            padding: 20px;
+            margin: 20px 0;
             border: 1px solid #ddd;
-            border-radius: 5px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s;
         }
+
+        .product img {
+            width: 200px;
+            height: auto;
+            border-radius: 8px;
+            margin-right: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .product img:hover {
+            transform: scale(1.05);
+        }
+
         .product h3 {
+            margin: 0;
             color: #3498db;
+            font-size: 1.5em;
         }
+
+        .product p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .product a {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .product a:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+
         footer {
             background-color: #333;
             color: white;
             text-align: center;
-            padding: 10px 0;
+            padding: 20px 0;
             margin-top: 20px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1em;
         }
     </style>
 </head>
@@ -52,16 +107,82 @@
 <div class="container">
     <section id="laptop">
         <h2>Danh Sách Laptop</h2>
+
         <div class="product">
-            <h3>Laptop Dell XPS 15</h3>
-            <p>CPU: Intel Core i7 | RAM: 16GB | SSD: 512GB</p>
-            <p>Giá: 40,000,000 VND</p>
+            <img src="https://th.bing.com/th/id/OIP.7ueGsxQosGD2Hi3F7m3IRwHaG1?rs=1&pid=ImgDetMain" alt="Laptop Dell XPS 15">
+            <div class="details">
+                <h3>Laptop Dell XPS 15</h3>
+                <p>CPU: Intel Core i7 | RAM: 16GB | SSD: 512GB</p>
+                <p>Giá: 40,000,000 VND</p>
+                <p><a href="pc-gaming-xtreme.html"><strong>Thông Tin Chi Tiết</strong></a></p>
+                <a href="#" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="https://th.bing.com/th/id/OIP.CeF1aX0L5NTTOJeceR67_gHaE0?rs=1&pid=ImgDetMain" alt="MacBook Pro 14">
+            <div class="details">
+                <h3>MacBook Pro 14"</h3>
+                <p>Chip: Apple M1 Pro | RAM: 16GB | SSD: 1TB</p>
+                <p>Giá: 60,000,000 VND</p>
+                <p><a href="pc-gaming-xtreme.html"><strong>Thông Tin Chi Tiết</strong></a></p>
+                <a href="#" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:0:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/a/s/asus-rog-strix-g15-g513qr-hq264t-r9-5900hx-3_a4eff41c56f64ef99fe4055a5b2276bf_grande.png" alt="Asus ROG Strix G15">
+            <div class="details">
+                <h3>Asus ROG Strix G15</h3>
+                <p>CPU: Ryzen 9 5900HX | GPU: RTX 3070 | RAM: 16GB | SSD: 1TB</p>
+                <p>Giá: 45,000,000 VND</p>
+                <p><a href="pc-gaming-xtreme.html"><strong>Thông Tin Chi Tiết</strong></a></p>
+                <a href="#" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="https://cdn.tgdd.vn/Products/Images/44/327974/asus-fx507zc4-i7-hn181w-16-750x500.jpg" alt="Asus TUF Gaming F15">
+            <div class="details">
+                <h3>Asus TUF Gaming F15</h3>
+                <p>CPU: Intel i7-12700H | GPU: RTX 3060 | RAM: 16GB | SSD: 512GB</p>
+                <p>Giá: 40,000,000 VND</p>
+                <p><a href="pc-gaming-xtreme.html"><strong>Thông Tin Chi Tiết</strong></a></p>
+                <a href="#" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a>
+            </div>
         </div>
         <div class="product">
-            <h3>MacBook Pro 14"</h3>
-            <p>Chip: Apple M1 Pro | RAM: 16GB | SSD: 1TB</p>
-            <p>Giá: 60,000,000 VND</p>
+            <img src="https://cdn2.fptshop.com.vn/unsafe/384x0/filters:quality(100)/2021_8_27_637656603491869356_asus-gaming-zephyrus-ga401-xam-noled-4.jpg" alt="Asus ROG Zephyrus G14">
+            <div class="details">
+                <h3>Asus ROG Zephyrus G14</h3>
+                <p>CPU: Ryzen 9 6900HS | GPU: RTX 3060 | RAM: 16GB | SSD: 1TB</p>
+                <p>Giá: 50,000,000 VND</p>
+                <p><a href="pc-gaming-xtreme.html"><strong>Thông Tin Chi Tiết</strong></a></p>
+                <a href="#" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a>
+            </div>
         </div>
+        <div class="product">
+            <img src="https://laptopaz.vn/media/product/120_3169_rog_flow_x13.jpg" alt="Asus ROG Flow X13">
+            <div class="details">
+                <h3>Asus ROG Flow X13</h3>
+                <p>CPU: Ryzen 7 6800HS | GPU: RTX 3050 Ti | RAM: 16GB | SSD: 1TB</p>
+                <p>Giá: 55,000,000 VND</p>
+                <p><a href="pc-gaming-xtreme.html"><strong>Thông Tin Chi Tiết</strong></a></p>
+                <a href="#" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a>
+            </div>
+        </div>
+        <div class="product">
+            <img src="https://anphat.com.vn/media/product/43019_laptop_asus_rog_strix_scar_15_g533zs_ln036w_ngan__9_.jpg" alt="Asus ROG Strix SCAR 15">
+            <div class="details">
+                <h3>Asus ROG Strix SCAR 15</h3>
+                <p>CPU:  Intel i9-12900H | GPU: RTX 3080 Ti | RAM: 32GB | SSD: 2TB</p>
+                <p>Giá: 85,000,000 VND</p>
+                <p><a href="pc-gaming-xtreme.html"><strong>Thông Tin Chi Tiết</strong></a></p>
+                <a href="#" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a>
+            </div>
+        </div>
+       
+
     </section>
 </div>
 
