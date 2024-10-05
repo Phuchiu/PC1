@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cửa Hàng Bán PC & Laptop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        header img {
+            display: block;
+            margin: 0 auto;
+        }
+        nav {
+            background-color: #555;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .product {
+            background-color: #fff;
+            padding: 20px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .product h3 {
+            color: #3498db;
+        }
+        .product img {
+            width: 200px;
+            height: auto;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+        #product-detail {
+            display: none; /* Ẩn thông tin chi tiết ban đầu */
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 20px 0;
+        }
+    </style>
+    <script src="productDetails.js"></script> <!-- Liên kết với file JavaScript -->
+</head>
+<body>
+
+<header>
+    <img src="https://tse1.mm.bing.net/th?id=OIG3.i3Ic.6ZzI7x9LscStFqg&pid=ImgGn" alt="Logo của cửa hàng" width="100" height="100">
+    <h1>Cửa Hàng Bán PC & Laptop Cao Cấp</h1>
+    <p>Chất lượng, Uy tín, Giá cả hợp lý</p>
+</header>
+
+<nav>
+    <a href="#home">Trang Chủ</a>
+    <a href="#pc">PC Gaming</a>
+    <a href="#laptop">Laptop</a> 
+    <a href="#linhkien">Linh Kiện</a> 
+    <a href="#phukien">Phụ Kiện</a>
+    <a href="#tintuc">Tin Tức</a>
+    <a href="#lienhe">Liên Hệ</a>
+</nav>
+
+<div class="container">
+    <section id="pc">
+        <h2>PC Gaming</h2>
+        <div class="product">
+            <img src="https://th.bing.com/th/id/OIP.liRt3Ifxcsxzz-g14RxfHgHaHa?rs=1&pid=ImgDetMain" alt="PC Gaming Xtreme">
+            <h3>PC Gaming Xtreme</h3>
+            <p>CPU: Intel Core i9 | RAM: 32GB | VGA: RTX 3080</p>
+            <p>Giá: 50,000,000 VND</p>
+            <p><a href="javascript:void(0);" onclick="showDetails('PC Gaming Xtreme', 'Intel Core i9', '32GB', 'RTX 3080', '50,000,000')" style="text-decoration: none;"><strong>Thông Tin Chi Tiết</strong></a></p>
+            <p><a href="checkout.html" style="text-decoration: none;"><strong>Mua Ngay</strong></a></p>
+        </div>
+        <div class="product">
+            <img src="https://th.bing.com/th/id/OIP.XwcxgJRl07pt3QCNdt2z4AHaHa?rs=1&pid=ImgDetMain" alt="PC Gaming Elite">
+            <h3>PC Gaming Elite</h3>
+            <p>CPU: AMD Ryzen 9 | RAM: 32GB | VGA: RX 6900XT</p>
+            <p>Giá: 48,000,000 VND</p>
+            <p><a href="javascript:void(0);" onclick="showDetails('PC Gaming Elite', 'AMD Ryzen 9', '32GB', 'RX 6900XT', '48,000,000')" style="text-decoration: none;"><strong>Thông Tin Chi Tiết</strong></a></p>
+            <p><a href="checkout.html" style="text-decoration: none;"><strong>Mua Ngay</strong></a></p>
+        </div>
+    </section>
+
+    <section id="MH">
+        <h2>Màn Hình</h2>
+        <div class="product">
+            <img src="https://th.bing.com/th/id/OIP.toOnriUBnpki-bRI5XM36gHaHa?rs=1&pid=ImgDetMain" alt="VG27AQ3A">
+            <h3>VG27AQ3A</h3>
+            <p>Hãng: ASUS</p>
+            <p>Giá: 5,600,000 VND</p>
+            <p><a href="javascript:void(0);" onclick="showDetails('VG27AQ3A', 'N/A', 'N/A', 'N/A', '5,600,000')" style="text-decoration: none;"><strong>Thông Tin Chi Tiết</strong></a></p>
+        </div>
+    </section>
+
+    <section id="laptop">
+        <h2>Laptop</h2>
+        <div class="product">
+            <img src="https://th.bing.com/th/id/OIP.7ueGsxQosGD2Hi3F7m3IRwHaG1?rs=1&pid=ImgDetMain" alt="Laptop Dell XPS 15">
+            <h3>Laptop Dell XPS 15</h3>
+            <p>CPU: Intel Core i7 | RAM: 16GB | SSD: 512GB</p>
+            <p>Giá: 40,000,000 VND</p>
+            <p><a href="javascript:void(0);" onclick="showDetails('Laptop Dell XPS 15', 'Intel Core i7', '16GB', 'N/A', '40,000,000')" style="text-decoration: none;"><strong>Thông Tin Chi Tiết</strong></a></p>
+        </div>
+        <div class="product">
+            <img src="https://th.bing.com/th/id/OIP.CeF1aX0L5NTTOJeceR67_gHaE0?rs=1&pid=ImgDetMain" alt="MacBook Pro 14">
+            <h3>MacBook Pro 14"</h3>
+            <p>Chip: Apple M1 Pro | RAM: 16GB | SSD: 1TB</p>
+            <p>Giá: 60,000,000 VND</p>
+            <p><a href="javascript:void(0);" onclick="showDetails('MacBook Pro 14"', 'Apple M1 Pro', '16GB', 'N/A', '60,000,000')" style="text-decoration: none;"><strong>Thông Tin Chi Tiết</strong></a></p>
+        </div>
+    </section>
+
+    <!-- Phần hiển thị chi tiết sản phẩm -->
+    <div id="product-detail"></div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Cửa Hàng Bán PC & Laptop.</p>
+</footer>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</body>
+</html>
