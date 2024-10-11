@@ -6,7 +6,7 @@
     <title>PC Gaming</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
@@ -25,28 +25,42 @@
             border-radius: 5px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
+        section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #3498db;
+        }
         .product {
-            display: inline-block;
-            width: calc(33.333% - 20px);
-            background-color: #f9f9f9;
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            background-color: #ffffff;
             padding: 15px;
-            margin: 10px;
             border: 1px solid #ddd;
             border-radius: 5px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.2s, box-shadow 0.2s;
-            vertical-align: top;
+            flex-direction: row; /* Ensure items are in a row */
         }
         .product:hover {
             transform: translateY(-5px);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
         .product img {
-            width: 100%;
+            width: 150px; /* Adjust width as necessary */
             height: auto;
             border-radius: 5px;
+            margin-right: 15px; /* Space between image and text */
         }
         .product h3 {
             color: #3498db;
+            font-size: 1.2em;
+            margin: 0 0 5px 0; /* Adjusted margins */
+        }
+        .product p {
+            margin: 5px 0;
+            font-size: 0.9em;
+            color: #555;
         }
         footer {
             background-color: #333;
@@ -55,17 +69,18 @@
             padding: 10px 0;
             margin-top: 20px;
         }
-        .purchase-button, .info-button {
-            display: inline-block;
-            padding: 10px 15px;
-            margin-top: 10px;
+        .purchase-button {
+            display: inline-block; /* Change from block to inline-block to control width */
+            padding: 8px 12px; /* Reduce padding for smaller buttons */
+            width: 150px; /* Set a fixed width for all buttons */
             background-color: #3498db;
             color: white;
             border-radius: 5px;
             text-decoration: none;
+            text-align: center; /* Center the button text */
             transition: background-color 0.3s, transform 0.3s;
         }
-        .purchase-button:hover, .info-button:hover {
+        .purchase-button:hover {
             background-color: #2980b9;
             transform: scale(1.05);
         }
@@ -80,57 +95,102 @@
 <div class="container">
     <section id="pc">
         <h2>Danh Sách PC Gaming</h2>
-        
-        <div class="product" data-info="Thông tin chi tiết: CPU: Intel Core i9 | RAM: 32GB | VGA: RTX 3080">
-            <img src="https://th.bing.com/th/id/OIP.liRt3Ifxcsxzz-g14RxfHgHaHa?rs=1&pid=ImgDetMain" alt="PC Gaming Xtreme">
-            <h3>PC Gaming Xtreme</h3>
-            <p>Giá: 50,000,000 VND</p>
-            <p><a href="#" class="info-button"><strong>Thông Tin Chi Tiết</strong></a></p>
-            <p><a href="#" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a></p>
+
+        <div class="product" data-info="Thông tin chi tiết: CPU: Ryzen 7 5800H | GPU: RTX 3060 | RAM: 16GB | SSD: 512GB">
+            <img src="Link HP Omen 15" alt="HP Omen 15">
+            <div>
+                <h3>HP Omen 15</h3>
+                <p>CPU: Ryzen 7 5800H | GPU: RTX 3060 | RAM: 16GB | SSD: 512GB</p>
+                <p>Giá: 38,000,000 VND</p>
+                <a href="http://127.0.0.1:5500/HTML/checkout.html" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a>
+            </div>
         </div>
 
-        <div class="product" data-info="Thông tin chi tiết: CPU: AMD Ryzen 9 | RAM: 32GB | VGA: RX 6900XT">
-            <img src="https://th.bing.com/th/id/OIP.XwcxgJRl07pt3QCNdt2z4AHaHa?rs=1&pid=ImgDetMain" alt="PC Gaming Elite">
-            <h3>PC Gaming Elite</h3>
-            <p>Giá: 48,000,000 VND</p>
-            <p><a href="#" class="info-button"><strong>Thông Tin Chi Tiết</strong></a></p>
-            <p><a href="#" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a></p>
+        <div class="product" data-info="Thông tin chi tiết: CPU: Intel i7-11700 | RAM: 16GB | SSD: 1TB | HDD: 2TB | VGA: Intel UHD Graphics 750">
+            <img src="Link Asus 2" alt="Asus S500MA">
+            <div>
+                <h3>Asus S500MA</h3>
+                <p>CPU: Intel i7-11700 | RAM: 16GB | SSD: 1TB | HDD: 2TB | VGA: Intel UHD Graphics 750</p>
+                <p>Giá: 25,000,000 VND</p>
+                <a href="http://127.0.0.1:5500/HTML/checkout.html" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a>
+            </div>
         </div>
 
+        <div class="product" data-info="Thông tin chi tiết: CPU: Intel i3-4005U | RAM: 4GB | SSD: 128GB | VGA: Intel HD Graphics">
+            <img src="Link Asus 3" alt="Asus VivoPC VM42">
+            <div>
+                <h3>Asus VivoPC VM42</h3>
+                <p>CPU: Intel i3-4005U | RAM: 4GB | SSD: 128GB | VGA: Intel HD Graphics</p>
+                <p>Giá: 10,000,000 VND</p>
+                <a href="http://127.0.0.1:5500/HTML/checkout.html" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a>
+            </div>
+        </div>
+
+        <div class="product" data-info="Thông tin chi tiết: CPU: Intel i5-10400 | RAM: 8GB | SSD: 512GB | VGA: Intel UHD Graphics 630">
+            <img src="Link Acer 1" alt="Acer Aspire TC">
+            <div>
+                <h3>Acer Aspire TC</h3>
+                <p>CPU: Intel i5-10400 | RAM: 8GB | SSD: 512GB | VGA: Intel UHD Graphics 630</p>
+                <p>Giá: 14,000,000 VND</p>
+                <a href="http://127.0.0.1:5500/HTML/checkout.html" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a>
+            </div>
+        </div>
+
+        <div class="product" data-info="Thông tin chi tiết: CPU: Intel i7-10700 | RAM: 16GB | SSD: 1TB | VGA: Intel UHD Graphics 630">
+            <img src="Link Acer 2" alt="Acer Veriton X">
+            <div>
+                <h3>Acer Veriton X</h3>
+                <p>CPU: Intel i7-10700 | RAM: 16GB | SSD: 1TB | VGA: Intel UHD Graphics 630</p>
+                <p>Giá: 20,000,000 VND</p>
+                <a href="http://127.0.0.1:5500/HTML/checkout.html" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a>
+            </div>
+        </div>
+
+        <div class="product" data-info="Thông tin chi tiết: CPU: Intel i7-7700 | RAM: 16GB | SSD: 512GB | VGA: NVIDIA GTX 1060">
+            <img src="Link Acer 3" alt="Acer Aspire GX">
+            <div>
+                <h3>Acer Aspire GX</h3>
+                <p>CPU: Intel i7-7700 | RAM: 16GB | SSD: 512GB | VGA: NVIDIA GTX 1060</p>
+                <p>Giá: 25,000,000 VND</p>
+                <a href="http://127.0.0.1:5500/HTML/checkout.html" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a>
+            </div>
+        </div>
+
+        <div class="product" data-info="Thông tin chi tiết: CPU: Intel i5-1135G7 | RAM: 8GB | SSD: 512GB | VGA: Intel Iris Xe Graphics">
+            <img src="Link MSI 1" alt="MSI Modern AM241">
+            <div>
+                <h3>MSI Modern AM241</h3>
+                <p>CPU: Intel i5-1135G7 | RAM: 8GB | SSD: 512GB | VGA: Intel Iris Xe Graphics</p>
+                <p>Giá: 19,000,000 VND</p>
+                <a href="http://127.0.0.1:5500/HTML/checkout.html" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a>
+            </div>
+        </div>
+
+        <div class="product" data-info="Thông tin chi tiết: CPU: Ryzen 7 5800X | RAM: 32GB | SSD: 1TB | VGA: NVIDIA RTX 3080">
+            <img src="Link MSI 2" alt="MSI Trident 3">
+            <div>
+                <h3>MSI Trident 3</h3>
+                <p>CPU: Ryzen 7 5800X | RAM: 32GB | SSD: 1TB | VGA: NVIDIA RTX 3080</p>
+                <p>Giá: 45,000,000 VND</p>
+                <a href="http://127.0.0.1:5500/HTML/checkout.html" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a>
+            </div>
+        </div>
+
+        <div class="product" data-info="Thông tin chi tiết: CPU: Ryzen 5 5600G | RAM: 16GB | SSD: 512GB | VGA: Integrated Radeon Graphics">
+            <img src="Link Dell 1" alt="Dell G5 15">
+            <div>
+                <h3>Dell G5 15</h3>
+                <p>CPU: Ryzen 5 5600G | RAM: 16GB | SSD: 512GB | VGA: Integrated Radeon Graphics</p>
+                <p>Giá: 35,000,000 VND</p>
+                <a href="http://127.0.0.1:5500/HTML/checkout.html" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a>
+            </div>
+        </div>
     </section>
 </div>
 
 <footer>
-    <p>&copy; 2024 Cửa Hàng Bán PC & Laptop.</p>
+    <p>&copy; 2024 PC Gaming Store. All rights reserved.</p>
 </footer>
-
-<script>
-    // Xác nhận khi người dùng nhấn "Mua Ngay"
-    const purchaseButtons = document.querySelectorAll('.purchase-button');
-    purchaseButtons.forEach(button => {
-        button.addEventListener('click', function(event) {
-            event.preventDefault(); // Ngăn chặn hành động mặc định của liên kết
-            const confirmation = confirm("Bạn có chắc chắn muốn mua sản phẩm này không?");
-            if (confirmation) {
-                const url = this.getAttribute('data-url'); // Lấy URL từ thuộc tính data-url
-                window.location.href = url; // Chuyển hướng đến trang thanh toán
-            }
-        });
-    });
-
-    // Hiển thị thông tin chi tiết sản phẩm với xác nhận
-    const infoButtons = document.querySelectorAll('.info-button');
-    infoButtons.forEach(button => {
-        button.addEventListener('click', function(event) {
-            event.preventDefault(); // Ngăn chặn hành động mặc định của liên kết
-            const productInfo = this.parentElement.parentElement.getAttribute('data-info'); // Lấy thông tin sản phẩm
-            const confirmation = confirm("Bạn có muốn xem thông tin chi tiết sản phẩm này không?");
-            if (confirmation) {
-                alert(productInfo); // Hiển thị thông tin chi tiết
-            }
-        });
-    });
-</script>
 
 </body>
 </html>
