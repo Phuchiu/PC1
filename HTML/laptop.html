@@ -3,323 +3,390 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laptop</title>
+    <title>Danh Sách Sản Phẩm Laptop Cao Cấp</title>
     <style>
+        /* Cấu trúc tổng thể */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif;
+            background-color: #eaeef1; /* Màu nền nhẹ nhàng */
+            color: #333; /* Màu chữ chính */
             margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2em;
         }
 
         .container {
-            max-width: 1200px;
-            margin: 20px auto;
+            width: 90%;
+            margin: 0 auto;
             padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        /* Phần header */
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #343a40; /* Màu nền đậm */
+            color: #ffffff;
+            border-bottom: 4px solid #007bff; /* Đường viền phía dưới */
+        }
+
+            header img {
+                vertical-align: middle;
+                border-radius: 50%; /* Thêm viền tròn cho logo */
+                border: 3px solid #ffffff;
+            }
+
+            header h1 {
+                margin: 10px 0;
+                font-size: 2.5rem;
+            }
+
+            header p {
+                font-style: italic;
+                color: #b0b3b8;
+            }
+
+        /* Thanh điều hướng */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #007bff; /* Màu xanh công nghệ */
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+        }
+
+            nav a {
+                color: white;
+                text-decoration: none;
+                padding: 10px 20px;
+                margin: 0 10px;
+                background-color: #0056b3; /* Màu nền cho nút */
+                border-radius: 30px; /* Bo góc mềm mại */
+                transition: background-color 0.3s ease, transform 0.3s ease;
+            }
+
+                nav a:hover {
+                    background-color: #004494; /* Màu khi rê chuột */
+                    transform: scale(1.05); /* Phóng to khi rê chuột */
+                }
+
+        /* Tiêu đề và phần nội dung chính */
+        h1 {
+            text-align: center;
+            color: #ffffff;
+        }
+        h2 {
+            text-align: center;
+            color: #073a6d;
+        }
+
+        /* Lưới sản phẩm */
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around; /* Căn đều sản phẩm */
         }
 
         .product {
-            background-color: #f9f9f9;
+            background-color: white;
             padding: 20px;
-            margin: 20px 0;
+            margin: 10px;
             border: 1px solid #ddd;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            transition: box-shadow 0.3s;
-        }
-
-        .product img {
-            width: 200px;
-            height: auto;
-            border-radius: 8px;
-            margin-right: 20px;
-            transition: transform 0.3s ease;
-        }
-
-        .product img:hover {
-            transform: scale(1.05);
-        }
-
-        .product h3 {
-            margin: 0;
-            color: #3498db;
-            font-size: 1.5em;
-        }
-
-        .product p {
-            margin: 5px 0;
-            color: #555;
-        }
-
-        .product a {
-            display: inline-block;
-            background-color: #3498db;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 10px;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .product a:hover {
-            background-color: #2980b9;
-            transform: scale(1.05);
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
+            border-radius: 10px;
             text-align: center;
-            padding: 20px 0;
-            margin-top: 20px;
+            width: calc(33.33% - 40px); /* Chiếm 1/3 chiều rộng */
+            box-sizing: border-box;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Đổ bóng đậm hơn */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        footer p {
-            margin: 0;
-            font-size: 1em;
+            .product:hover {
+                transform: translateY(-10px); /* Di chuyển khi rê chuột */
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Đổ bóng mạnh hơn khi rê chuột */
+            }
+
+            .product img {
+                width: 200px;
+                height: 200px;
+                object-fit: cover;
+                transition: transform 0.3s ease;
+                border-radius: 5px;
+            }
+
+                .product img:hover {
+                    transform: scale(1.1); /* Phóng to hình khi rê chuột */
+                }
+
+            .product h3 {
+                font-size: 1.5rem; /* Tăng kích thước tiêu đề */
+                color: #343a40;
+                margin: 15px 0;
+            }
+
+            .product p {
+                font-size: 0.9rem;
+                color: #6c757d; /* Màu chữ nhạt hơn */
+            }
+
+            .product a {
+                display: inline-block;
+                padding: 10px 20px;
+                margin: 10px 0;
+                background-color: #007bff; /* Màu nút */
+                color: white;
+                border-radius: 5px;
+                text-decoration: none;
+                transition: background-color 0.3s ease, transform 0.3s ease;
+            }
+
+                .product a:hover {
+                    background-color: #0056b3; /* Màu nút khi rê chuột */
+                    transform: scale(1.05); /* Phóng to nút khi rê chuột */
+                }
+
+        /* Phần footer */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #343a40;
+            color: white;
+            margin-top: 20px;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
         }
     </style>
 </head>
+
 <body>
+    <!-- Phần header -->
+    <header>
+        <img src="https://tse1.mm.bing.net/th?id=OIG3.i3Ic.6ZzI7x9LscStFqg&pid=ImgGn" alt="Logo của cửa hàng" width="100" height="100">
+        <h1>Cửa Hàng Bán PC & Laptop Cao Cấp</h1>
+        <p>Chất lượng - Uy tín - Giá cả hợp lý</p>
+    </header>
 
-<header>
-    <h1>Các Sản Phẩm Laptop</h1>
-</header>
-
-<div class="container">
-    <section id="laptop">
-        <h2>Danh Sách Laptop</h2>
-
-
-        <div class="product">
-            <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:0:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/a/s/asus-rog-strix-g15-g513qr-hq264t-r9-5900hx-3_a4eff41c56f64ef99fe4055a5b2276bf_grande.png" alt="Asus ROG Strix G15">
-            <div class="details">
-                <h3>Asus ROG Strix G15</h3>
-                <p>CPU: Ryzen 9 5900HX | GPU: RTX 3070 | RAM: 16GB | SSD: 1TB</p>
-                <p>Giá: 45,000,000 VND</p>
-                <p><a href="asus-rog-strix-g15.html"><strong>Thông Tin Chi Tiết</strong></a></p>
-                <a href="http://127.0.0.1:5500/HTML/checkout.html" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a>
-            </div>
+    <!-- Thanh điều hướng -->
+    <nav>
+        <a href="#home">Trang Chủ</a>
+        <a href="pc.html">PC Gaming</a>
+        <a href="laptop.html">Laptop</a>
+        <a href="phukien.html">Phụ Kiện</a>
+        <a href="tintuc.html">Tin Tức</a>
+        <a href="lienhe.html">Liên Hệ</a>
+    </nav>
+    <!-- Phần nội dung chính -->
+    <div class="container">
+        <section id="pc">
+            <h2>Danh Sách Sản Phẩm Laptop Cao Cấp</h2>
+            <div class="product-grid">
+                <div class="product">
+                    <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:0:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/a/s/asus-rog-strix-g15-g513qr-hq264t-r9-5900hx-3_a4eff41c56f64ef99fe4055a5b2276bf_grande.png" alt="Asus ROG Strix G15">
+                    <h3>Asus ROG Strix G15</h3>
+                    <p>Loại: Laptop</p>
+                    <p>CPU: Ryzen 9 5900HX, RAM: 16GB, SSD: 1TB, VGA: RTX 3070</p>
+                    <p>Giá: 45,000,000 VND</p>
+                    <p><a href="asus-rog-strix-g15.html"><strong>Thông Tin Chi Tiết</strong></a></p>
+                    <p><a href="#" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a></p>
+                </div>
+                
+                <div class="product">
+                    <img src="https://cdn.tgdd.vn/Products/Images/44/327974/asus-fx507zc4-i7-hn181w-16-750x500.jpg" alt="Asus TUF Gaming F15">
+                    <h3>Asus TUF Gaming F15</h3>
+                    <p>Loại: Laptop</p>
+                    <p>CPU: Intel i7-12700H, RAM: 16GB, SSD: 512GB, VGA: RTX 3060</p>
+                    <p>Giá: 40,000,000 VND</p>
+                    <p><a href="asus-tuf-gaming-f15.html"><strong>Thông Tin Chi Tiết</strong></a></p>
+                    <p><a href="#" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a></p>
+                </div>
+                
+                <div class="product">
+                    <img src="https://cdn2.fptshop.com.vn/unsafe/384x0/filters:quality(100)/2021_8_27_637656603491869356_asus-gaming-zephyrus-ga401-xam-noled-4.jpg" alt="Asus ROG Zephyrus G14">
+                    <h3>Asus ROG Zephyrus G14</h3>
+                    <p>Loại: Laptop</p>
+                    <p>CPU: Ryzen 9 6900HS, RAM: 16GB, SSD: 1TB, VGA: RTX 3060</p>
+                    <p>Giá: 50,000,000 VND</p>
+                    <p><a href="asus-rog-zephyrus-g14.html"><strong>Thông Tin Chi Tiết</strong></a></p>
+                    <p><a href="#" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a></p>
+                </div>
+                
+                <div class="product">
+                    <img src="https://laptopaz.vn/media/product/120_3169_rog_flow_x13.jpg" alt="Asus ROG Flow X13">
+                    <h3>Asus ROG Flow X13</h3>
+                    <p>Loại: Laptop</p>
+                    <p>CPU: Ryzen 7 6800HS, RAM: 16GB, SSD: 1TB, VGA: RTX 3050 Ti</p>
+                    <p>Giá: 55,000,000 VND</p>
+                    <p><a href="asus-rog-flow-x13.html"><strong>Thông Tin Chi Tiết</strong></a></p>
+                    <p><a href="#" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a></p>
+                </div>
+                
+                <div class="product">
+                    <img src="https://anphat.com.vn/media/product/43019_laptop_asus_rog_strix_scar_15_g533zs_ln036w_ngan__9_.jpg" alt="Asus ROG Strix SCAR 15">
+                    <h3>Asus ROG Strix SCAR 15</h3>
+                    <p>Loại: Laptop</p>
+                    <p>CPU: Intel i9-12900H, RAM: 32GB, SSD: 2TB, VGA: RTX 3080 Ti</p>
+                    <p>Giá: 85,000,000 VND</p>
+                    <p><a href="asus-rog-strix-scar-15.html"><strong>Thông Tin Chi Tiết</strong></a></p>
+                    <p><a href="#" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a></p>
+                </div>
+                <div class="product">
+                    <img src="https://www.bing.com/th?id=OIP.DUb8HwwfxlEOHKLIG98xowHaGA&w=180&h=150&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="Acer Predator Helios 300">
+                    <h3>Acer Predator Helios 300</h3>
+                    <p>Loại: Laptop</p>
+                    <p>CPU: Intel i7-11800H, GPU: RTX 3060, RAM: 16GB, SSD: 512GB, Màn hình: 15.6" FHD 144Hz</p>
+                    <p>Giá: 40,000,000 VND</p>
+                    <p><a href="acer-predator-helios-300.html"><strong>Thông Tin Chi Tiết</strong></a></p>
+                    <p><a href="#" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a></p>
+                </div>
+                
+                <div class="product">
+                    <img src="https://www.bing.com/th?id=OIP.KlQLP4H3IFimipSy_eSNtgHaFk&w=214&h=150&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="Acer Nitro 5">
+                    <h3>Acer Nitro 5</h3>
+                    <p>Loại: Laptop</p>
+                    <p>CPU: Ryzen 7 5800H, GPU: RTX 3050, RAM: 16GB, SSD: 512GB, Màn hình: 15.6" FHD 144Hz</p>
+                    <p>Giá: 30,000,000 VND</p>
+                    <p><a href="acer-nitro-5.html"><strong>Thông Tin Chi Tiết</strong></a></p>
+                    <p><a href="#" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a></p>
+                </div>
+                
+                <div class="product">
+                    <img src="https://www.bing.com/th?id=OIP.Wa4P7OiEbCvwvegfl3UfFwHaE7&w=196&h=150&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="Acer Predator Triton 500 SE">
+                    <h3>Acer Predator Triton 500 SE</h3>
+                    <p>Loại: Laptop</p>
+                    <p>CPU: Intel i9-11900H, GPU: RTX 3080, RAM: 32GB, SSD: 1TB, Màn hình: 16" QHD 165Hz</p>
+                    <p>Giá: 60,000,000 VND</p>
+                    <p><a href="acer-predator-triton-500-se.html"><strong>Thông Tin Chi Tiết</strong></a></p>
+                    <p><a href="#" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a></p>
+                </div>
+                
+                <div class="product">
+                    <img src="https://www.bing.com/th?id=OIP.wvBwkDqjUad3eRJrjlFppwHaEK&w=241&h=150&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="MSI GE66 Raider">
+                    <h3>MSI GE66 Raider</h3>
+                    <p>Loại: Laptop</p>
+                    <p>CPU: Intel i9-11980HK, GPU: RTX 3080, RAM: 32GB, SSD: 1TB, Màn hình: 15.6" QHD 240Hz</p>
+                    <p>Giá: 65,000,000 VND</p>
+                    <p><a href="msi-ge66-raider.html"><strong>Thông Tin Chi Tiết</strong></a></p>
+                    <p><a href="#" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a></p>
+                </div>
+                
+                <div class="product">
+                    <img src="https://www.bing.com/th?id=OIP.jTAMCi2rLJie5bggPZtZuwHaHa&w=181&h=150&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="MSI GF63 Thin">
+                    <h3>MSI GF63 Thin</h3>
+                    <p>Loại: Laptop</p>
+                    <p>CPU: Intel i7-10750H, GPU: GTX 1650, RAM: 8GB, SSD: 512GB, Màn hình: 15.6" FHD 144Hz</p>
+                    <p>Giá: 25,000,000 VND</p>
+                    <p><a href="msi-gf63-thin.html"><strong>Thông Tin Chi Tiết</strong></a></p>
+                    <p><a href="#" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a></p>
+                </div>
+                
+                <div class="product">
+                    <img src="https://www.bing.com/th?id=OIP.jzf6rqVANgZDufRrtcc9fgHaHa&w=167&h=150&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="MSI Stealth 15M">
+                    <h3>MSI Stealth 15M</h3>
+                    <p>Loại: Laptop</p>
+                    <p>CPU: Intel i7-11375H, GPU: RTX 3060, RAM: 16GB, SSD: 512GB, Màn hình: 15.6" FHD 144Hz</p>
+                    <p>Giá: 50,000,000 VND</p>
+                    <p><a href="msi-stealth-15m.html"><strong>Thông Tin Chi Tiết</strong></a></p>
+                    <p><a href="#" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a></p>
+                </div>
+                
+                <div class="product">
+                    <img src="https://www.bing.com/th?id=OIP.yOw7WEOzhdmWTJhI-ymTPwHaHa&w=171&h=150&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="HP Omen 15">
+                    <h3>HP Omen 15</h3>
+                    <p>Loại: Laptop</p>
+                    <p>CPU: Ryzen 7 5800H, GPU: RTX 3060, RAM: 16GB, SSD: 512GB, Màn hình: 15.6" FHD 144Hz</p>
+                    <p>Giá: 38,000,000 VND</p>
+                    <p><a href="hp-omen-15.html"><strong>Thông Tin Chi Tiết</strong></a></p>
+                    <p><a href="#" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a></p>
+                </div>
+                
+                <div class="product">
+                    <img src="https://th.bing.com/th?id=OIP.p5luHvlgAdnkBZoruU3iNAHaEI&w=152&h=104&c=7&bgcl=c782fe&r=0&o=6&dpr=1.3&pid=13.1" alt="HP Victus 16">
+                    <h3>HP Victus 16</h3>
+                    <p>Loại: Laptop</p>
+                    <p>CPU: Intel i7-12700H, GPU: RTX 3050 Ti, RAM: 16GB, SSD: 512GB, Màn hình: 16.1" FHD 144Hz</p>
+                    <p>Giá: 35,000,000 VND</p>
+                    <p><a href="hp-victus-16.html"><strong>Thông Tin Chi Tiết</strong></a></p>
+                    <p><a href="#" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a></p>
+                </div>
+                
+                <div class="product">
+                    <img src="https://th.bing.com/th?id=OIP.uckbjjsrXp6gOljVNJ1mbgHaHa&w=298&h=298&c=10&rs=1&qlt=99&bgcl=fffffe&r=0&o=6&dpr=1.3&pid=MultiSMRSV2Source" alt="HP Pavilion Gaming 15">
+                    <h3>HP Pavilion Gaming 15</h3>
+                    <p>Loại: Laptop</p>
+                    <p>CPU: Intel i5-11300H, GPU: GTX 1650, RAM: 8GB, SSD: 256GB, Màn hình: 15.6" FHD 144Hz</p>
+                    <p>Giá: 28,000,000 VND</p>
+                    <p><a href="hp-pavilion-gaming-15.html"><strong>Thông Tin Chi Tiết</strong></a></p>
+                    <p><a href="#" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a></p>
+                </div>
+                <div class="product">
+                    <img src="https://th.bing.com/th?id=OIP.-VcYDTW1lpcwEG4umlzatQHaER&w=171&h=104&c=7&bgcl=b69d4d&r=0&o=6&dpr=1.3&pid=13.1" alt="Lenovo Legion 5 Pro">
+                    <h3>Lenovo Legion 5 Pro</h3>
+                    <p>Loại: Laptop</p>
+                    <p>CPU: Ryzen 7 5800H, GPU: RTX 3070, RAM: 16GB, SSD: 1TB, Màn hình: 16" QHD 165Hz</p>
+                    <p>Giá: 47,000,000 VND</p>
+                    <p><a href="lenovo-legion-5-pro.html"><strong>Thông Tin Chi Tiết</strong></a></p>
+                    <p><a href="#" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a></p>
+                </div>
+                
+                <div class="product">
+                    <img src="https://th.bing.com/th?id=OIP.e2G11ma2cIyPMLhPORLOUwHaHa&w=80&h=80&c=1&vt=10&bgcl=fe9fb1&r=0&o=6&dpr=1.3&pid=5.1" alt="Lenovo IdeaPad Gaming 3">
+                    <h3>Lenovo IdeaPad Gaming 3</h3>
+                    <p>Loại: Laptop</p>
+                    <p>CPU: Ryzen 5 5600H, GPU: RTX 3050, RAM: 8GB, SSD: 512GB, Màn hình: 15.6" FHD 120Hz</p>
+                    <p>Giá: 30,000,000 VND</p>
+                    <p><a href="lenovo-ideapad-gaming-3.html"><strong>Thông Tin Chi Tiết</strong></a></p>
+                    <p><a href="#" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a></p>
+                </div>
+                
+                <div class="product">
+                    <img src="https://th.bing.com/th/id/OIP.h58CbwulkyU1ZTipa8chyQHaEK?w=273&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Lenovo Legion 7">
+                    <h3>Lenovo Legion 7</h3>
+                    <p>Loại: Laptop</p>
+                    <p>CPU: Ryzen 9 5900HX, GPU: RTX 3080, RAM: 32GB, SSD: 1TB, Màn hình: 16" QHD 165Hz</p>
+                    <p>Giá: 70,000,000 VND</p>
+                    <p><a href="lenovo-legion-7.html"><strong>Thông Tin Chi Tiết</strong></a></p>
+                    <p><a href="#" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a></p>
+                </div>
+                
+                <div class="product">
+                    <img src="https://www.bing.com/th?id=OIP.zZ4RPIhFjAPw04krOP9-tQHaFj&w=175&h=150&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="Dell G15 Gaming">
+                    <h3>Dell G15 Gaming</h3>
+                    <p>Loại: Laptop</p>
+                    <p>CPU: Intel i7-11800H, GPU: RTX 3050 Ti, RAM: 16GB, SSD: 512GB, Màn hình: 15.6" FHD 120Hz</p>
+                    <p>Giá: 35,000,000 VND</p>
+                    <p><a href="dell-g15-gaming.html"><strong>Thông Tin Chi Tiết</strong></a></p>
+                    <p><a href="#" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a></p>
+                </div>
+                
+                <div class="product">
+                    <img src="https://th.bing.com/th?id=OIP.PuXnCZb0e3vZEx1okfijWgAAAA&w=200&h=150&c=8&rs=1&bgcl=9102de&r=0&o=6&dpr=1.3&pid=5.1" alt="Dell Alienware m15 R6">
+                    <h3>Dell Alienware m15 R6</h3>
+                    <p>Loại: Laptop</p>
+                    <p>CPU: Intel i9-11900H, GPU: RTX 3080, RAM: 32GB, SSD: 1TB, Màn hình: 15.6" QHD 240Hz</p>
+                    <p>Giá: 75,000,000 VND</p>
+                    <p><a href="dell-alienware-m15-r6.html"><strong>Thông Tin Chi Tiết</strong></a></p>
+                    <p><a href="#" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a></p>
+                </div>
+                
+                <div class="product">
+                    <img src="https://th.bing.com/th?id=OIP.619PXejPb1ZYqdGmpYeO0QHaHa&w=298&h=298&c=10&rs=1&qlt=99&bgcl=fffffe&r=0&o=6&dpr=1.3&pid=MultiSMRSV2Source" alt="Dell XPS 17 Gaming">
+                    <h3>Dell XPS 17 Gaming</h3>
+                    <p>Loại: Laptop</p>
+                    <p>CPU: Intel i7-11800H, GPU: RTX 3060, RAM: 16GB, SSD: 1TB, Màn hình: 17" UHD 4K</p>
+                    <p>Giá: 70,000,000 VND</p>
+                    <p><a href="dell-xps-17-gaming.html"><strong>Thông Tin Chi Tiết</strong></a></p>
+                    <p><a href="#" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a></p>
+                </div>
+            </section>
         </div>
-
-        <div class="product">
-            <img src="https://cdn.tgdd.vn/Products/Images/44/327974/asus-fx507zc4-i7-hn181w-16-750x500.jpg" alt="Asus TUF Gaming F15">
-            <div class="details">
-                <h3>Asus TUF Gaming F15</h3>
-                <p>CPU: Intel i7-12700H | GPU: RTX 3060 | RAM: 16GB | SSD: 512GB</p>
-                <p>Giá: 40,000,000 VND</p>
-                <p><a href="asus-tuf"><strong>Thông Tin Chi Tiết</strong></a></p>
-                <a href="http://127.0.0.1:5500/HTML/checkout.html" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a>
-            </div>
+        <!-- Nơi hiển thị nội dung chính -->
+        <div>
+            @RenderBody()
         </div>
-        <div class="product">
-            <img src="https://cdn2.fptshop.com.vn/unsafe/384x0/filters:quality(100)/2021_8_27_637656603491869356_asus-gaming-zephyrus-ga401-xam-noled-4.jpg" alt="Asus ROG Zephyrus G14">
-            <div class="details">
-                <h3>Asus ROG Zephyrus G14</h3>
-                <p>CPU: Ryzen 9 6900HS | GPU: RTX 3060 | RAM: 16GB | SSD: 1TB</p>
-                <p>Giá: 50,000,000 VND</p>
-                <p><a href="pc-gaming-xtreme.html"><strong>Thông Tin Chi Tiết</strong></a></p>
-                <a href="http://127.0.0.1:5500/HTML/checkout.html" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a>
-            </div>
-        </div>
-        <div class="product">
-            <img src="https://laptopaz.vn/media/product/120_3169_rog_flow_x13.jpg" alt="Asus ROG Flow X13">
-            <div class="details">
-                <h3>Asus ROG Flow X13</h3>
-                <p>CPU: Ryzen 7 6800HS | GPU: RTX 3050 Ti | RAM: 16GB | SSD: 1TB</p>
-                <p>Giá: 55,000,000 VND</p>
-                <p><a href="pc-gaming-xtreme.html"><strong>Thông Tin Chi Tiết</strong></a></p>
-                <a href="http://127.0.0.1:5500/HTML/checkout.html" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a>
-            </div>
-        </div>
-        <div class="product">
-            <img src="https://anphat.com.vn/media/product/43019_laptop_asus_rog_strix_scar_15_g533zs_ln036w_ngan__9_.jpg" alt="Asus ROG Strix SCAR 15">
-            <div class="details">
-                <h3>Asus ROG Strix SCAR 15</h3>
-                <p>CPU:  Intel i9-12900H | GPU: RTX 3080 Ti | RAM: 32GB | SSD: 2TB</p>
-                <p>Giá: 85,000,000 VND</p>
-                <p><a href="pc-gaming-xtreme.html"><strong>Thông Tin Chi Tiết</strong></a></p>
-                <a href="http://127.0.0.1:5500/HTML/checkout.html" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a>
-            </div>
-        </div>
-        <div class="product">
-            <img src="" alt="Acer Predator Helios 300">
-            <div class="details">
-                <h3>Acer Predator Helios 300</h3>
-                <p>CPU:   Intel i7-11800H | GPU: RTX 3060 | RAM: 16GB | SSD: 512GB</p>
-                <p>Giá: 40,000,000 VND</p>
-                <p><a href="pc-gaming-xtreme.html"><strong>Thông Tin Chi Tiết</strong></a></p>
-                <a href="http://127.0.0.1:5500/HTML/checkout.html" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a>
-            </div>
-        </div>
-        <div class="product">
-            <img src="" alt="Acer Nitro 5">
-            <div class="details">
-                <h3>Acer Nitro 5</h3>
-                <p>CPU:    Ryzen 7 5800H | GPU: RTX 3050 | RAM: 16GB | SSD: 512GB</p>
-                <p>Giá: 30,000,000 VND</p>
-                <p><a href="pc-gaming-xtreme.html"><strong>Thông Tin Chi Tiết</strong></a></p>
-                <a href="http://127.0.0.1:5500/HTML/checkout.html" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a>
-            </div>
-        </div>
-        <div class="product">
-            <img src="" alt="Acer Predator Triton 500 SE">
-            <div class="details">
-                <h3>Acer Predator Triton 500 SE</h3>
-                <p>CPU:    Intel i9-11900H | GPU: RTX 3080 | RAM: 32GB | SSD: 1TB</p>
-                <p>Giá: 60,000,000 VND</p>
-                <p><a href="pc-gaming-xtreme.html"><strong>Thông Tin Chi Tiết</strong></a></p>
-                <a href="http://127.0.0.1:5500/HTML/checkout.html" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a>
-            </div>
-        </div>
-        <div class="product">
-            <img src="" alt="MSI GE66 Raider">
-            <div class="details">
-                <h3>MSI GE66 Raider</h3>
-                <p>CPU:     Intel i9-11980HK | GPU: RTX 3080 | RAM: 32GB | SSD: 1TB</p>
-                <p>Giá: 65,000,000 VND</p>
-                <p><a href="pc-gaming-xtreme.html"><strong>Thông Tin Chi Tiết</strong></a></p>
-                <a href="http://127.0.0.1:5500/HTML/checkout.html" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a>
-            </div>
-        </div>
-        <div class="product">
-            <img src="" alt="MSI GF63 Thin">
-            <div class="details">
-                <h3>MSI GF63 Thin</h3>
-                <p>CPU:    Intel i7-10750H | GPU: GTX 1650 |  RAM: 8GB | SSD: 512GB</p>
-                <p>Giá: 25,000,000 VND</p>
-                <p><a href="pc-gaming-xtreme.html"><strong>Thông Tin Chi Tiết</strong></a></p>
-                <a href="http://127.0.0.1:5500/HTML/checkout.html" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a>
-            </div>
-        </div>
-        <div class="product">
-            <img src="" alt="MSI Stealth 15M">
-            <div class="details">
-                <h3>MSI Stealth 15M</h3>
-                <p>CPU:     Intel i7-11375H | GPU: RTX 3060 |  RAM: 16GB | SSD: 512GB</p>
-                <p>Giá: 50,000,000 VND</p>
-                <p><a href="pc-gaming-xtreme.html"><strong>Thông Tin Chi Tiết</strong></a></p>
-                <a href="http://127.0.0.1:5500/HTML/checkout.html" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a>
-            </div>
-        </div>
-        <div class="product">
-            <img src="" alt="HP Omen 15">
-            <div class="details">
-                <h3>HP Omen 15</h3>
-                <p>CPU:      Ryzen 7 5800H | GPU: RTX 3060 |  RAM: 16GB | SSD: 512GB</p>
-                <p>Giá: 38,000,000 VND</p>
-                <p><a href="pc-gaming-xtreme.html"><strong>Thông Tin Chi Tiết</strong></a></p>
-                <a href="http://127.0.0.1:5500/HTML/checkout.html" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a>
-            </div>
-        </div>
-        <div class="product">
-            <img src="" alt="HP Victus 16">
-            <div class="details">
-                <h3>HP Victus 16</h3>
-                <p>CPU:      Intel i7-12700H | GPU: RTX 3050 Ti |  RAM: 16GB | SSD: 512GB</p>
-                <p>Giá: 35,000,000 VND</p>
-                <p><a href="pc-gaming-xtreme.html"><strong>Thông Tin Chi Tiết</strong></a></p>
-                <a href="http://127.0.0.1:5500/HTML/checkout.html" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a>
-            </div>
-        </div>
-        <div class="product">
-            <img src="" alt="HP Pavilion Gaming 15">
-            <div class="details">
-                <h3>HP Pavilion Gaming 15</h3>
-                <p>CPU:      Intel i5-11300H | GPU:  GTX 1650 |  RAM: 8GB | SSD: 256GB</p>
-                <p>Giá: 28,000,000 VND</p>
-                <p><a href="pc-gaming-xtreme.html"><strong>Thông Tin Chi Tiết</strong></a></p>
-                <a href="http://127.0.0.1:5500/HTML/checkout.html" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a>
-            </div>
-        </div>
-        <div class="product">
-            <img src="" alt="Lenovo Legion 5 Pro">
-            <div class="details">
-                <h3>Lenovo Legion 5 Pro</h3>
-                <p>CPU:      Ryzen 7 5800H | GPU:  RTX 3070 |  RAM: 16GB | SSD: 1TB</p>
-                <p>Giá: 47,000,000 VND</p>
-                <p><a href="pc-gaming-xtreme.html"><strong>Thông Tin Chi Tiết</strong></a></p>
-                <a href="http://127.0.0.1:5500/HTML/checkout.html" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a>
-            </div>
-        </div>
-        <div class="product">
-            <img src="" alt="Lenovo IdeaPad Gaming 3">
-            <div class="details">
-                <h3>Lenovo IdeaPad Gaming 3</h3>
-                <p>CPU:      Ryzen 5 5600H | GPU:  RTX 3050 |  RAM: 8GB | SSD: 512GB</p>
-                <p>Giá: 30,000,000 VND</p>
-                <p><a href="pc-gaming-xtreme.html"><strong>Thông Tin Chi Tiết</strong></a></p>
-                <a href="http://127.0.0.1:5500/HTML/checkout.html" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a>
-            </div>
-        </div>
-        <div class="product">
-            <img src="" alt="Lenovo Legion 7">
-            <div class="details">
-                <h3>Lenovo Legion 7</h3>
-                <p>CPU:     Ryzen 9 5900HX | GPU:  RTX 3080 |  RAM: 32GB | SSD: 1TB</p>
-                <p>Giá: 70,000,000 VND</p>
-                <p><a href="pc-gaming-xtreme.html"><strong>Thông Tin Chi Tiết</strong></a></p>
-                <a href="http://127.0.0.1:5500/HTML/checkout.html" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a>
-            </div>
-        </div>
-        <div class="product">
-            <img src="" alt="Dell G15 Gaming">
-            <div class="details">
-                <h3>Dell G15 Gaming</h3>
-                <p>CPU:     Intel i7-11800H | GPU:  RTX 3050 Ti |  RAM: 16GB | SSD: 512GB</p>
-                <p>Giá: 35,000,000 VND</p>
-                <p><a href="pc-gaming-xtreme.html"><strong>Thông Tin Chi Tiết</strong></a></p>
-                <a href="http://127.0.0.1:5500/HTML/checkout.html" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a>
-            </div>
-        </div>
-        <div class="product">
-            <img src="" alt="Dell Alienware m15 R6">
-            <div class="details">
-                <h3>Dell Alienware m15 R6</h3>
-                <p>CPU:      Intel i9-11900H | GPU:  RTX 3080 |  RAM: 32GB | SSD: 1TB</p>
-                <p>Giá: 75,000,000 VND</p>
-                <p><a href="pc-gaming-xtreme.html"><strong>Thông Tin Chi Tiết</strong></a></p>
-                <a href="http://127.0.0.1:5500/HTML/checkout.html" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a>
-            </div>
-        </div>
-        <div class="product">
-            <img src="" alt="Dell XPS 17 Gaming">
-            <div class="details">
-                <h3>Dell XPS 17 Gaming</h3>
-                <p>CPU:       Intel i7-11800H | GPU:  RTX 3060 |  RAM: 16GB | SSD: 1TB</p>
-                <p>Giá: 70,000,000 VND</p>
-                <p><a href="pc-gaming-xtreme.html"><strong>Thông Tin Chi Tiết</strong></a></p>
-                <a href="http://127.0.0.1:5500/HTML/checkout.html" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a>
-            </div>
-        </div>
-        
-        
-       
-
-    </section>
-</div>
-
-<footer>
-    <p>&copy; 2024 Cửa Hàng Bán PC & Laptop.</p>
-</footer>
-
-</body>
-</html>
+        <!-- Phần footer -->
+        <footer>
+            <p>&copy; 2024 Cửa Hàng Bán PC & Laptop Cao Cấp. Thiết kế bởi [Đỗ Thành Nhân Tài]</p>
+        </footer>
+    </body>
+    </html>
+                
+               
+                
