@@ -31,6 +31,14 @@
             margin: 0 15px;
             text-decoration: none;
             font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+            display: inline-block;
+        }
+        nav a:hover {
+            background-color: #1e90ff;
+            color: white;
         }
         .container {
             max-width: 1200px;
@@ -51,6 +59,24 @@
         .product img {
             width: 200px;
             height: auto;
+            transition: transform 0.2s;
+        }
+        .product img:hover {
+            transform: scale(1.1);
+        }
+        .product a {
+            display: inline-block;
+            padding: 10px 15px;
+            margin: 5px 0;
+            background-color: #3498db;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .product a:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
         }
         footer {
             background-color: #333;
@@ -59,15 +85,29 @@
             padding: 10px 0;
             margin-top: 20px;
         }
-        #product-detail {
-            display: none; /* Ẩn thông tin chi tiết ban đầu */
+        .cart-container {
             background-color: #fff;
-            border: 1px solid #ddd;
             padding: 20px;
             margin: 20px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+        }
+        .empty-cart {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .cart-total {
+            font-weight: bold;
+            text-align: right;
+            margin-top: 20px;
         }
     </style>
-    <script src="productDetails.js"></script> <!-- Liên kết với file JavaScript -->
 </head>
 <body>
 
@@ -79,12 +119,13 @@
 
 <nav>
     <a href="#home">Trang Chủ</a>
-    <a href="#pc">PC Gaming</a>
-    <a href="#laptop">Laptop</a> 
-    <a href="#linhkien">Linh Kiện</a> 
-    <a href="#phukien">Phụ Kiện</a>
-    <a href="#tintuc">Tin Tức</a>
-    <a href="#lienhe">Liên Hệ</a>
+    <a href="pc.html">PC Gaming</a>
+    <a href="laptop.html">Laptop</a> 
+    <a href="linhkien.html">Linh Kiện</a> 
+    <a href="phukien.html">Phụ Kiện</a>
+    <a href="tintuc.html">Tin Tức</a>
+    <a href="lienhe.html">Liên Hệ</a>
+    <a href="subfolder/giohang.html" id="cart-link">Giỏ Hàng (<span id="cart-count">0</span>)</a>
 </nav>
 
 <div class="container">
@@ -94,57 +135,107 @@
             <img src="https://th.bing.com/th/id/OIP.liRt3Ifxcsxzz-g14RxfHgHaHa?rs=1&pid=ImgDetMain" alt="PC Gaming Xtreme">
             <h3>PC Gaming Xtreme</h3>
             <p>CPU: Intel Core i9 | RAM: 32GB | VGA: RTX 3080</p>
-            <p>Giá: 50,000,000 VND</p>
-            <p><a href="javascript:void(0);" onclick="showDetails('PC Gaming Xtreme', 'Intel Core i9', '32GB', 'RTX 3080', '50,000,000')" style="text-decoration: none;"><strong>Thông Tin Chi Tiết</strong></a></p>
-            <p><a href="checkout.html" style="text-decoration: none;"><strong>Mua Ngay</strong></a></p>
+            <p class="price">Giá: 50,000,000 VND</p>
+            <p><a href="pc-gaming-xtreme.html"><strong>Thông Tin Chi Tiết</strong></a></p>
+            <p><a href="#" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a></p>
         </div>
         <div class="product">
             <img src="https://th.bing.com/th/id/OIP.XwcxgJRl07pt3QCNdt2z4AHaHa?rs=1&pid=ImgDetMain" alt="PC Gaming Elite">
             <h3>PC Gaming Elite</h3>
             <p>CPU: AMD Ryzen 9 | RAM: 32GB | VGA: RX 6900XT</p>
-            <p>Giá: 48,000,000 VND</p>
-            <p><a href="javascript:void(0);" onclick="showDetails('PC Gaming Elite', 'AMD Ryzen 9', '32GB', 'RX 6900XT', '48,000,000')" style="text-decoration: none;"><strong>Thông Tin Chi Tiết</strong></a></p>
-            <p><a href="checkout.html" style="text-decoration: none;"><strong>Mua Ngay</strong></a></p>
+            <p class="price">Giá: 48,000,000 VND</p>
+            <p><a href="pc-gaming-elite.html"><strong>Thông Tin Chi Tiết</strong></a></p>
+            <p><a href="#" class="purchase-button" data-url="checkout.html"><strong>Mua Ngay</strong></a></p>
         </div>
     </section>
 
-    <section id="MH">
+    <section id="ManHinh">
         <h2>Màn Hình</h2>
         <div class="product">
-            <img src="https://th.bing.com/th/id/OIP.toOnriUBnpki-bRI5XM36gHaHa?rs=1&pid=ImgDetMain" alt="VG27AQ3A">
-            <h3>VG27AQ3A</h3>
-            <p>Hãng: ASUS</p>
-            <p>Giá: 5,600,000 VND</p>
-            <p><a href="javascript:void(0);" onclick="showDetails('VG27AQ3A', 'N/A', 'N/A', 'N/A', '5,600,000')" style="text-decoration: none;"><strong>Thông Tin Chi Tiết</strong></a></p>
+            <img src="https://th.bing.com/th/id/OIP.FGqlYfhRvX2DSc2rU9WwFAHaHa?pid=ImgDet&rs=1" alt="Màn Hình Gaming">
+            <h3>Màn Hình Gaming 27 inch</h3>
+            <p>Độ phân giải: 2560 x 1440 | Tần số quét: 144Hz</p>
+            <p class="price">Giá: 10,000,000 VND</p>
+            <p><a href="man-hinh-gaming.html"><strong>Thông Tin Chi Tiết</strong></a></p>
+            <p><a href="#" class="purchase-button"><strong>Mua Ngay</strong></a></p>
         </div>
     </section>
 
-    <section id="laptop">
-        <h2>Laptop</h2>
-        <div class="product">
-            <img src="https://th.bing.com/th/id/OIP.7ueGsxQosGD2Hi3F7m3IRwHaG1?rs=1&pid=ImgDetMain" alt="Laptop Dell XPS 15">
-            <h3>Laptop Dell XPS 15</h3>
-            <p>CPU: Intel Core i7 | RAM: 16GB | SSD: 512GB</p>
-            <p>Giá: 40,000,000 VND</p>
-            <p><a href="javascript:void(0);" onclick="showDetails('Laptop Dell XPS 15', 'Intel Core i7', '16GB', 'N/A', '40,000,000')" style="text-decoration: none;"><strong>Thông Tin Chi Tiết</strong></a></p>
-        </div>
-        <div class="product">
-            <img src="https://th.bing.com/th/id/OIP.CeF1aX0L5NTTOJeceR67_gHaE0?rs=1&pid=ImgDetMain" alt="MacBook Pro 14">
-            <h3>MacBook Pro 14"</h3>
-            <p>Chip: Apple M1 Pro | RAM: 16GB | SSD: 1TB</p>
-            <p>Giá: 60,000,000 VND</p>
-            <p><a href="javascript:void(0);" onclick="showDetails('MacBook Pro 14"', 'Apple M1 Pro', '16GB', 'N/A', '60,000,000')" style="text-decoration: none;"><strong>Thông Tin Chi Tiết</strong></a></p>
-        </div>
+    <section id="cart-section" class="cart-container" style="display: none;">
+        <h2>Giỏ Hàng</h2>
+        <div id="cart-items"></div>
+        <p class="empty-cart" id="empty-cart-message">Giỏ hàng của bạn đang trống.</p>
+        <p class="cart-total" id="cart-total"></p>
+        <a href="checkout.html" id="checkout-button" style="display: none;">Thanh Toán</a>
     </section>
-
-    <!-- Phần hiển thị chi tiết sản phẩm -->
-    <div id="product-detail"></div>
 </div>
 
 <footer>
-    <p>&copy; 2024 Cửa Hàng Bán PC & Laptop.</p>
+    <p>&copy; 2024 Cửa Hàng Bán PC & Laptop. Tất cả quyền được bảo lưu.</p>
 </footer>
 
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    // Cập nhật số lượng sản phẩm trong giỏ hàng
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    document.getElementById('cart-count').textContent = cart.length;
+
+    // Hàm hiển thị sản phẩm trong giỏ hàng
+    function displayCart() {
+        const cartItemsDiv = document.getElementById('cart-items');
+        const emptyCartMessage = document.getElementById('empty-cart-message');
+        const cartTotal = document.getElementById('cart-total');
+        const checkoutButton = document.getElementById('checkout-button');
+        
+        cartItemsDiv.innerHTML = '';
+        let total = 0;
+
+        if (cart.length === 0) {
+            emptyCartMessage.style.display = 'block';
+            checkoutButton.style.display = 'none';
+        } else {
+            emptyCartMessage.style.display = 'none';
+            cart.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'cart-item';
+                itemDiv.innerHTML = `<span>${item.product}</span><span>${item.price} VND</span>`;
+                cartItemsDiv.appendChild(itemDiv);
+                total += item.price;
+            });
+            cartTotal.textContent = `Tổng cộng: ${total} VND`;
+            checkoutButton.style.display = 'block';
+        }
+    }
+
+    // Hiển thị giỏ hàng khi nhấp vào liên kết Giỏ Hàng
+    document.getElementById('cart-link').addEventListener('click', function(event) {
+        event.preventDefault(); // Ngăn chặn hành động mặc định của liên kết
+        const cartSection = document.getElementById('cart-section');
+        if (cartSection.style.display === 'none' || cartSection.style.display === '') {
+            cartSection.style.display = 'block';
+            displayCart(); // Hiển thị nội dung giỏ hàng
+        } else {
+            cartSection.style.display = 'none';
+        }
+    });
+
+    // Xử lý sự kiện click vào nút Mua Ngay
+    const purchaseButtons = document.querySelectorAll('.purchase-button');
+    purchaseButtons.forEach(button => {
+        button.addEventListener('click', (event) => {
+            event.preventDefault();
+            const productElement = event.target.parentElement.parentElement; // Lấy div sản phẩm
+            const productName = productElement.querySelector('h3').textContent; // Lấy tên sản phẩm
+            const productPrice = parseInt(productElement.querySelector('.price').textContent.replace(/[^0-9]/g, '')); // Lấy giá sản phẩm
+            cart.push({ product: productName, price: productPrice });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert('Sản phẩm đã được thêm vào giỏ hàng!');
+            document.getElementById('cart-count').textContent = cart.length;
+        });
+    });
+
+    // Hiển thị giỏ hàng khi tải trang
+    displayCart();
+</script>
+
 </body>
 </html>

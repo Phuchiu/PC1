@@ -179,6 +179,27 @@
         });
     });
 </script>
+<script>
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
+    const purchaseButtons = document.querySelectorAll('.purchase-button');
+    purchaseButtons.forEach(button => {
+        button.addEventListener('click', function(event) {
+            event.preventDefault();
+
+            const productElement = this.closest('.product');
+            const productName = productElement.querySelector('h3').textContent;
+            const productPrice = parseInt(productElement.querySelector('p:nth-child(4)').textContent.replace('Giá: ', '').replace(' VND', '').replace(',', ''));
+
+            const confirmation = confirm(`Bạn có chắc chắn muốn mua ${productName} không?`);
+
+            if (confirmation) {
+                cart.push({ product: productName, price: productPrice });
+                localStorage.setItem('cart', JSON.stringify(cart));
+                window.location.href = this.getAttribute('data-url');
+            }
+        });
+    });
+</script>
 </body>
 </html>

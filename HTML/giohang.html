@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ Hàng</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        td img {
+            width: 80px;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        .total {
+            text-align: right;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Giỏ Hàng Của Bạn</h2>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Sản Phẩm</th>
+                <th>Giá</th>
+                <th>Số Lượng</th>
+                <th>Tổng</th>
+                <th>Xóa</th>
+            </tr>
+        </thead>
+        <tbody id="cart-items">
+            <!-- Các sản phẩm sẽ được thêm vào đây từ localStorage -->
+        </tbody>
+    </table>
+
+    <div class="total">
+        <h3>Tổng Tiền: <span id="total-price">0 VND</span></h3>
+    </div>
+
+    <div style="text-align: right;">
+        <button class="btn" id="checkout-btn">Tiếp Tục Thanh Toán</button>
+    </div>
+</div>
+
+<script>
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartItemsContainer = document.getElementById('cart-items');
+    const totalPriceElement = document.getElementById('total-price');
+
+    function renderCart() {
+        cartItemsContainer.innerHTML = '';
+        let total = 0;
+
+        cart.forEach((item, index) => {
+            const productTotal = item.price * item.quantity;
+            total += productTotal;
+
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${item.product}</td>
+                <td>${item.price} VND</td>
+                <td>
+                    <input type="number" value="${item.quantity}" min="1" data-index="${index}" class="quantity-input">
+                </td>
+                <td>${productTotal} VND</td>
+                <td><button class="btn remove-btn" data-index="${index}">Xóa</button></td>
+            `;
+            cartItemsContainer.appendChild(row);
+        });
+
+        totalPriceElement.textContent = `${total} VND`;
+    }
+
+    // Xử lý thay đổi số lượng
+    cartItemsContainer.addEventListener('change', function(event) {
+        if (event.target.classList.contains('quantity-input')) {
+            const index = event.target.getAttribute('data-index');
+            const newQuantity = event.target.value;
+            cart[index].quantity = parseInt(newQuantity);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            renderCart();
+        }
+    });
+
+    // Xử lý xóa sản phẩm
+    cartItemsContainer.addEventListener('click', function(event) {
+        if (event.target.classList.contains('remove-btn')) {
+            const index = event.target.getAttribute('data-index');
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            renderCart();
+        }
+    });
+
+    // Chuyển sang trang thanh toán
+    document.getElementById('checkout-btn').addEventListener('click', function() {
+        window.location.href = 'checkout.html';
+    });
+
+    // Hiển thị giỏ hàng khi tải trang
+    renderCart();
+</script>
+
+</body>
+</html>
