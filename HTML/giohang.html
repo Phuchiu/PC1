@@ -6,8 +6,8 @@
     <title>Giỏ Hàng</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
             margin: 0;
             padding: 0;
         }
@@ -15,27 +15,40 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
         }
         h2 {
             text-align: center;
-            color: #333;
+            color: #2c3e50;
+            font-weight: bold;
+            margin-bottom: 20px;
         }
         table {
             width: 100%;
             border-collapse: collapse;
+            margin-bottom: 20px;
         }
         table, th, td {
             border: 1px solid #ddd;
         }
         th, td {
-            padding: 10px;
+            padding: 15px;
             text-align: center;
         }
         th {
-            background-color: #f4f4f4;
+            background-color: #3498db;
+            color: white;
         }
         td img {
             width: 80px;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+        td img:hover {
+            transform: scale(1.1);
         }
         .btn {
             padding: 10px 20px;
@@ -52,46 +65,96 @@
         .total {
             text-align: right;
             margin-top: 20px;
+            font-size: 18px;
+            color: #2c3e50;
+        }
+        .empty-cart {
+            text-align: center;
+            font-size: 18px;
+            color: #e74c3c;
+            margin-top: 20px;
+        }
+        .quantity-input {
+            width: 60px;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        /* Thêm kiểu cho phần giỏ hàng */
+        .cart-container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .cart-icon {
+            font-size: 20px;
+            margin-right: 10px;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
+    <!-- Phần hiển thị thông tin giỏ hàng và sản phẩm -->
     <h2>Giỏ Hàng Của Bạn</h2>
     
-    <table>
-        <thead>
-            <tr>
-                <th>Sản Phẩm</th>
-                <th>Giá</th>
-                <th>Số Lượng</th>
-                <th>Tổng</th>
-                <th>Xóa</th>
-            </tr>
-        </thead>
-        <tbody id="cart-items">
-            <!-- Các sản phẩm sẽ được thêm vào đây từ localStorage -->
-        </tbody>
-    </table>
+    <div id="cart-section">
+        <table id="cart-table">
+            <thead>
+                <tr>
+                    <th>Hình Ảnh</th>
+                    <th>Sản Phẩm</th>
+                    <th>Giá</th>
+                    <th>Số Lượng</th>
+                    <th>Tổng</th>
+                    <th>Xóa</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+                <!-- Các sản phẩm sẽ được thêm vào đây từ localStorage -->
+            </tbody>
+        </table>
 
-    <div class="total">
-        <h3>Tổng Tiền: <span id="total-price">0 VND</span></h3>
+        <div class="total">
+            <h3>Tổng Tiền: <span id="total-price">0 VND</span></h3>
+        </div>
+
+        <div style="text-align: right;">
+            <button class="btn" id="checkout-btn">Tiếp Tục Thanh Toán</button>
+        </div>
     </div>
 
-    <div style="text-align: right;">
-        <button class="btn" id="checkout-btn">Tiếp Tục Thanh Toán</button>
+    <div class="empty-cart" id="empty-cart-msg" style="display: none;">
+        Giỏ hàng của bạn hiện đang trống!
     </div>
 </div>
 
 <script>
+    // Tải giỏ hàng từ localStorage
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     const cartItemsContainer = document.getElementById('cart-items');
     const totalPriceElement = document.getElementById('total-price');
+    const emptyCartMsg = document.getElementById('empty-cart-msg');
+    const cartSection = document.getElementById('cart-section');
 
     function renderCart() {
         cartItemsContainer.innerHTML = '';
         let total = 0;
+
+        if (cart.length === 0) {
+            cartSection.style.display = 'none';
+            emptyCartMsg.style.display = 'block';
+            return;
+        } else {
+            cartSection.style.display = 'block';
+            emptyCartMsg.style.display = 'none';
+        }
 
         cart.forEach((item, index) => {
             const productTotal = item.price * item.quantity;
@@ -99,6 +162,7 @@
 
             const row = document.createElement('tr');
             row.innerHTML = `
+                <td><img src="${item.image}" alt="${item.product}"></td>
                 <td>${item.product}</td>
                 <td>${item.price} VND</td>
                 <td>
@@ -142,6 +206,9 @@
     // Hiển thị giỏ hàng khi tải trang
     renderCart();
 </script>
-
+<!-- Phần footer -->
+<footer>
+    <p>&copy; 2024 Cửa Hàng Bán PC & Laptop Cao Cấp. Thiết kế bởi [Đỗ Thành Nhân Tài]</p>
+</footer>
 </body>
 </html>
