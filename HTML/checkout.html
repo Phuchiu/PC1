@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
@@ -23,6 +23,26 @@
             text-align: center;
             color: #333;
         }
+        .header-right {
+    position: absolute;
+    top: 20px; /* Khoảng cách từ trên xuống */
+    right: 20px; /* Khoảng cách từ phải vào */
+    font-size: 16px;
+}
+
+.header-right a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    padding: 10px;
+    background-color: #2e58b3; /* Màu nền nút */
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.header-right a:hover {
+    background-color: #45a049;
+}
         label {
             display: block;
             margin: 10px 0 5px;
@@ -46,9 +66,155 @@
         button:hover {
             background-color: #2980b9;
         }
+    
+       header {
+            text-align: center;
+            padding: 20px;
+            background-color: #0a0768;
+            color: #ffffff;
+            border-bottom: 4px solid #007bff;
+        }
+
+        header img {
+            vertical-align: middle;
+            border-radius: 50%;
+            border: 3px solid #ffffff;
+        }
+
+        header h1 {
+            margin: 10px 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            font-style: italic;
+            color: #b0b3b8;
+        }
+
+        /* Thanh điều hướng */
+        nav {
+            position: relative; /* Đặt relative để giỏ hàng có thể định vị bằng absolute */
+            display: flex;
+            justify-content: center; /* Căn giữa các liên kết */
+            align-items: center;
+            background-color: #007bff;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        nav .nav-links {
+            display: flex;
+            justify-content: center; /* Căn giữa các liên kết */
+        }
+
+        nav .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            background-color: #0056b3;
+            border-radius: 30px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav .nav-links a:hover {
+            background-color: #004494;
+            transform: scale(1.05);
+        }
+
+        /* Phần giỏ hàng trong thanh điều hướng */
+        .cart-container {
+            position: absolute; /* Giỏ hàng nằm ở góc phải */
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+        }
+
+        .cart-container img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        .cart-container a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            background-color: transparent;
+        }
+
+        /* Tiêu đề và phần nội dung chính */
+        h1 {
+            text-align: center;
+            color: #ffffff;
+        }
+        h2 {
+            text-align: center;
+            color: #073a6d;
+        }
+        /* Phần footer */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #343a40;
+            color: white;
+            margin-top: 20px;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Nút Thêm vào Giỏ Hàng */
+        .add-to-cart {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-to-cart:hover {
+            background-color: #218838;
+        }
+        
     </style>
 </head>
+
 <body>
+    <!-- Phần header -->
+    <header>
+        <img src="https://tse1.mm.bing.net/th?id=OIG3.i3Ic.6ZzI7x9LscStFqg&pid=ImgGn" alt="Logo của cửa hàng" width="100" height="100">
+        <h1>Cửa Hàng Bán PC & Laptop Cao Cấp</h1>
+        <div class="header-right">
+            <a href="login.html">Đăng Nhập</a>
+            <a href="register.html">Đăng Ký</a>
+        </div>
+        <p>Chất lượng - Uy tín - Giá cả hợp lý</p>
+    </header>
+
+    <!-- Thanh điều hướng -->
+    <nav>
+        <div class="nav-links">
+            <a href="home.html">Trang Chủ</a>
+            <a href="pc.html">PC Gaming</a>
+            <a href="laptop.html">Laptop</a>
+            <a href="phukien.html">Phụ Kiện</a>
+            <a href="tintuc.html">Tin Tức</a>
+            <a href="lienhe.html">Liên Hệ</a>
+        </div>
+
+        <!-- Giỏ hàng nằm ở góc phải -->
+        <div class="cart-container">
+            <img src="https://png.pngtree.com/png-vector/20191030/ourlarge/pngtree-cart-plain-shoping-trolly-icon-vector-illustration-for-web-png-image_1927620.jpg" alt="Giỏ hàng">
+            <a href="cart.html">Xem Giỏ Hàng</a>
+        </div>
+    </nav>
 
 <div class="container">
     <h2>Thông Tin Thanh Toán</h2>
@@ -83,6 +249,8 @@
         window.location.href = 'thankyou.html';
     });
 </script>
-
+<footer>
+    <p>&copy; 2024 Cửa Hàng Bán PC & Laptop Cao Cấp. Thiết kế bởi [Team 4 Ae]</p>
+</footer>
 </body>
 </html>

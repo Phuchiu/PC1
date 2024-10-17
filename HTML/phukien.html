@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
@@ -20,11 +20,10 @@
             overflow: hidden;
         }
 
-        /* Phần header */
-        header {
+       header {
             text-align: center;
             padding: 20px;
-            background-color: #343a40;
+            background-color: #0a0768;
             color: #ffffff;
             border-bottom: 4px solid #007bff;
         }
@@ -44,6 +43,26 @@
             font-style: italic;
             color: #b0b3b8;
         }
+        .header-right {
+    position: absolute;
+    top: 20px; /* Khoảng cách từ trên xuống */
+    right: 20px; /* Khoảng cách từ phải vào */
+    font-size: 16px;
+}
+
+.header-right a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    padding: 10px;
+    background-color: #2e58b3; /* Màu nền nút */
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.header-right a:hover {
+    background-color: #45a049;
+}
 
         /* Thanh điều hướng */
         nav {
@@ -191,6 +210,10 @@
     <header>
         <img src="https://tse1.mm.bing.net/th?id=OIG3.i3Ic.6ZzI7x9LscStFqg&pid=ImgGn" alt="Logo của cửa hàng" width="100" height="100">
         <h1>Cửa Hàng Bán PC & Laptop Cao Cấp</h1>
+        <div class="header-right">
+            <a href="login.html">Đăng Nhập</a>
+            <a href="register.html">Đăng Ký</a>
+        </div>
         <p>Chất lượng - Uy tín - Giá cả hợp lý</p>
     </header>
 
@@ -208,7 +231,7 @@
         <!-- Giỏ hàng nằm ở góc phải -->
         <div class="cart-container">
             <img src="https://png.pngtree.com/png-vector/20191030/ourlarge/pngtree-cart-plain-shoping-trolly-icon-vector-illustration-for-web-png-image_1927620.jpg" alt="Giỏ hàng">
-            <a href="giohang.html">Xem Giỏ Hàng</a>
+            <a href="cart.html">Xem Giỏ Hàng</a>
         </div>
     </nav>
     <!-- Phần nội dung chính -->
