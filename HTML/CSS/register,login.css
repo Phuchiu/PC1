@@ -1,0 +1,234 @@
+/* Cấu trúc tổng thể */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+}
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+h2 {
+    text-align: center;
+    color: #333;
+}
+/* Phần header */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #0a0768;
+    color: #ffffff;
+    border-bottom: 4px solid #007bff;
+}
+
+header img {
+    vertical-align: middle;
+    border-radius: 50%;
+    border: 3px solid #ffffff;
+}
+
+header h1 {
+    margin: 10px 0;
+    font-size: 2.5rem;
+}
+
+header p {
+    font-style: italic;
+    color: #b0b3b8;
+}
+.header-right {
+position: absolute;
+top: 20px; /* Khoảng cách từ trên xuống */
+right: 20px; /* Khoảng cách từ phải vào */
+font-size: 16px;
+}
+
+.header-right a {
+color: white;
+text-decoration: none;
+margin-left: 15px;
+padding: 10px;
+background-color: #2e58b3; /* Màu nền nút */
+border-radius: 5px;
+transition: background-color 0.3s;
+}
+
+.header-right a:hover {
+background-color: #45a049;
+}
+
+/* Thanh điều hướng */
+nav {
+    position: relative; /* Đặt relative để giỏ hàng có thể định vị bằng absolute */
+    display: flex;
+    justify-content: center; /* Căn giữa các liên kết */
+    align-items: center;
+    background-color: #007bff;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav .nav-links {
+    display: flex;
+    justify-content: center; /* Căn giữa các liên kết */
+}
+
+nav .nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #0056b3;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+nav .nav-links a:hover {
+    background-color: #004494;
+    transform: scale(1.05);
+}
+
+/* Phần giỏ hàng trong thanh điều hướng */
+.cart-container {
+    position: absolute; /* Giỏ hàng nằm ở góc phải */
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+}
+
+.cart-container img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.cart-container a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: transparent;
+}
+
+/* Tiêu đề và phần nội dung chính */
+h1 {
+    text-align: center;
+    color: #ffffff;
+}
+h2 {
+    text-align: center;
+    color: #073a6d;
+}
+
+
+/* Phần footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #343a40;
+    color: white;
+    margin-top: 20px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Nút Thêm vào Giỏ Hàng */
+.add-to-cart {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #218838;
+}
+/* Các nút điều hướng */
+.prev, .next {
+cursor: pointer;
+position: absolute;
+top: 50%;
+padding: 16px;
+color: white;
+font-weight: bold;
+font-size: 12px;
+transition: background-color 0.6s ease;
+border-radius: 0 3px 3px 0;
+background-color: rgba(0, 0, 0, 0.5); /* Màu nền nút điều hướng */
+user-select: none;
+transform: translateY(-50%);
+}
+
+.next {
+right: 0;
+border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Chấm tròn chỉ số slide */
+.dot-container {
+text-align: center;
+padding: 15px 0;
+background: #333;
+}
+
+.dot {
+cursor: pointer;
+height: 5px;
+width: 5px;
+margin: 0 5px;
+background-color: #bbb;
+border-radius: 50%;
+display: inline-block;
+transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+background-color: #717171;
+}
+input[type="text"], input[type="password"], input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.button:hover {
+    background-color: #45a049;
+}
+.login-container, .register-container {
+    text-align: center;
+    margin-top: 20px;
+}
+.login-container a, .register-container a {
+    color: #333;
+    text-decoration: none;
+}
+.login-container a:hover, .register-container a:hover {
+    color: #4CAF50;
+}

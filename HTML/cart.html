@@ -1,0 +1,192 @@
+<!DOCTYPE html> 
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ Hàng</title>
+    <link rel="stylesheet" href="CSS/Tong.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+        }
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .header-right {
+    position: absolute;
+    top: 20px; /* Khoảng cách từ trên xuống */
+    right: 20px; /* Khoảng cách từ phải vào */
+    font-size: 16px;
+}
+
+.header-right a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    padding: 10px;
+    background-color: #2e58b3; /* Màu nền nút */
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.header-right a:hover {
+    background-color: #45a049;
+}
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 15px;
+            text-align: center;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+        td img {
+            width: 80px;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+        td img:hover {
+            transform: scale(1.1);
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        .total {
+            text-align: right;
+            margin-top: 20px;
+            font-size: 18px;
+            color: #2c3e50;
+        }
+        .empty-cart {
+            text-align: center;
+            font-size: 18px;
+            color: #e74c3c;
+            margin-top: 20px;
+        }
+        .quantity-input {
+            width: 60px;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        .cart-container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border-radius: 8px;
+margin-bottom: 20px;
+        }
+        .cart-icon {
+            font-size: 20px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Phần header -->
+    <header>
+        <img src="https://tse1.mm.bing.net/th?id=OIG3.i3Ic.6ZzI7x9LscStFqg&pid=ImgGn" alt="Logo của cửa hàng" width="100" height="100">
+        <h1>Cửa Hàng Bán PC & Laptop Cao Cấp</h1>
+        <div class="header-right">
+            <a href="login.html">Đăng Nhập</a>
+            <a href="register.html">Đăng Ký</a>
+        </div>
+        
+        <p>Chất lượng - Uy tín - Giá cả hợp lý</p>
+    </header>
+
+    <!-- Thanh điều hướng -->
+    <nav>
+        <div class="nav-links">
+            <a href="home.html">Trang Chủ</a>
+            <a href="pc.html">PC Gaming</a>
+            <a href="laptop.html">Laptop</a>
+            <a href="phukien.html">Phụ Kiện</a>
+            <a href="tintuc.html">Tin Tức</a>
+            <a href="lienhe.html">Liên Hệ</a>
+        </div>
+
+        <!-- Giỏ hàng nằm ở góc phải -->
+        <div class="cart-container">
+            <img src="https://png.pngtree.com/png-vector/20191030/ourlarge/pngtree-cart-plain-shoping-trolly-icon-vector-illustration-for-web-png-image_1927620.jpg" alt="Giỏ hàng">
+            <a href="cart.html">Xem Giỏ Hàng</a>
+        </div>
+    </nav>
+    <div class="container">
+        <h2>Giỏ Hàng Của Bạn</h2>
+    
+        <div id="cart-section">
+            <table id="cart-table">
+                <thead>
+                    <tr>
+                        <th>Hình Ảnh</th>
+                        <th>Sản Phẩm</th>
+                        <th>Thông Tin San Phẩm</th>
+                        <th>Số Lượng</th>
+                        <th>Tổng</th>
+                        <th>Xóa</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items">
+                    <!-- Các sản phẩm sẽ được thêm vào đây từ localStorage -->
+                </tbody>
+            </table>
+    
+            <div class="total">
+                <h3>Tổng Tiền: <span id="total-price">0 VND</span></h3>
+            </div>
+    
+            <div style="text-align: right;">
+                <button class="btn" id="checkout-btn">Tiếp Tục Thanh Toán</button>
+            </div>
+        </div>
+    
+        <div class="empty-cart" id="empty-cart-msg" style="display: none;">
+            Giỏ hàng của bạn hiện đang trống!
+        </div>
+    </div>
+     <!-- Liên kết tệp JavaScript ở đây -->
+     <script src="JS/cart.js"></script>
+   
+<footer>
+    <p>&copy; 2024 Cửa Hàng Bán PC & Laptop Cao Cấp. Thiết kế bởi [Team 4 Ae]</p>
+</footer>
+</body>
+</html>
