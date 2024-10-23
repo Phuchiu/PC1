@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh Sách Sản Phẩm Phụ Kiện Cao Cấp</title>
+    <link rel="stylesheet" href="CSS/Tong.css">
+    <!-- Phần header -->
+    <header>
+        <img src="https://tse1.mm.bing.net/th?id=OIG3.i3Ic.6ZzI7x9LscStFqg&pid=ImgGn" alt="Logo của cửa hàng" width="100" height="100">
+        <h1>Cửa Hàng Bán PC & Laptop Cao Cấp</h1>
+        <div class="header-right">
+            <a href="login.html">Đăng Nhập</a>
+            <a href="register.html">Đăng Ký</a>
+        </div>
+        
+        <p>Chất lượng - Uy tín - Giá cả hợp lý</p>
+    </header>
+
+    <!-- Thanh điều hướng -->
+    <nav>
+        <div class="nav-links">
+            <a href="home.html">Trang Chủ</a>
+            <a href="pc.html">PC Gaming</a>
+            <a href="laptop.html">Laptop</a>
+            <a href="phukien.html">Phụ Kiện</a>
+            <a href="tintuc.html">Tin Tức</a>
+            <a href="lienhe.html">Liên Hệ</a>
+        </div>
+
+        <!-- Giỏ hàng nằm ở góc phải -->
+        <div class="cart-container">
+            <img src="https://png.pngtree.com/png-vector/20191030/ourlarge/pngtree-cart-plain-shoping-trolly-icon-vector-illustration-for-web-png-image_1927620.jpg" alt="Giỏ hàng">
+            <a href="cart.html">Xem Giỏ Hàng</a>
+        </div>
+    </nav>
+<div class="slideshow-container">
+    <!-- Hình ảnh -->
+    <div class="slides">
+        <img src="https://laptop88.vn/media/news/2803_1200x628px.jpg" alt="Laptop 1">
+    </div>
+    <div class="slides">
+        <img src="https://hanoicomputercdn.com/media/news/1295_pc_dong_bo__laptop_1200x675.png" alt="Laptop 2">
+    </div>
+    <div class="slides">
+        <img src="https://minhancomputercdn.com/media/news/712_banner_chuong_trinh_khuyen_mai_network_mua_ban_phim.jpg" alt="Laptop 3">
+    </div>
+    <div class="slides">
+        <img src="D:\d68e64d6-b8e1-4ce4-9f8f-13c4348bc0da.png" alt="Laptop 4">
+    </div>
+
+    <!-- Nút điều hướng -->
+    <a class="prev">&#10094;</a>
+    <a class="next">&#10095;</a>
+</div>
+
+<!-- Chấm tròn chỉ số slide -->
+<div class="dot-container">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+</div>
+
+   <!-- Phần nội dung chính -->
+<div class="container">
+    <section id="pc">
+        <h2>Danh Sách Sản Phẩm Laptop Cao Cấp</h2>
+        <div class="product-grid">
+            <div class="product" data-name="Asus ROG Strix G15" data-specs="CPU: Ryzen 9 5900HX, GPU: RTX 3070, RAM: 16GB, SSD: 1TB, Màn hình: 15.6&quot; FHD 144Hz" data-price="45,000,000 VND" data-availability="Hàng sẵn sàng" data-image="image/a15.jpg" onclick="showDetails(this)">
+                <img src="image/a15.jpg" alt="Asus ROG Strix G15">
+                <h3>Asus ROG Strix G15</h3>
+                <p>CPU: Ryzen 9 5900HX, GPU: RTX 3070, RAM: 16GB, SSD: 1TB, Màn hình: 15.6" FHD 144Hz</p>
+                <p>Giá: 45,000,000 VND</p>
+                <a href="checkout.html" class="purchase-button">Mua Ngay</a>
+                <a href="#" class="add-to-cart-button" data-url="checkout.html">
+                    <img src="https://png.pngtree.com/png-vector/20191030/ourlarge/pngtree-cart-plain-shoping-trolly-icon-vector-illustration-for-web-png-image_1927620.jpg" alt="Giỏ hàng">
+                </a>
+                <p><strong style="color: green;">Hàng sẵn sàng</strong></p>
+            </div>
+            <div class="product" data-name="Asus TUF Gaming F15" data-specs="CPU: Intel i7-12700H, GPU: RTX 3060, RAM: 16GB, SSD: 512GB, Màn hình: 15.6&quot; FHD 144Hz" data-price="40,000,000 VND" data-availability="Hàng sẵn sàng" data-image="image/a16.jpg" onclick="showDetails(this)">
+                <img src="image/a16.jpg" alt="Asus TUF Gaming F15">
+                <h3>Asus TUF Gaming F15</h3>
+                <p>CPU: Intel i7-12700H, GPU: RTX 3060, RAM: 16GB, SSD: 512GB, Màn hình: 15.6" FHD 144Hz</p>
+                <p>Giá: 40,000,000 VND</p>
+                <a href="checkout.html" class="purchase-button">Mua Ngay</a>
+                <a href="#" class="add-to-cart-button" data-url="checkout.html">
+                    <img src="https://png.pngtree.com/png-vector/20191030/ourlarge/pngtree-cart-plain-shoping-trolly-icon-vector-illustration-for-web-png-image_1927620.jpg" alt="Giỏ hàng">
+                </a>
+                <p><strong style="color: green;">Hàng sẵn sàng</strong></p>
+            </div>
+            <div class="product" data-name="Asus ROG Zephyrus G14" data-specs="CPU: Ryzen 9 6900HS, GPU: RTX 3060, RAM: 16GB, SSD: 1TB, Màn hình: 14&quot; QHD 120Hz" data-price="50,000,000 VND" data-availability="Hàng sẵn sàng" data-image="image/a17.jpg" onclick="showDetails(this)">
+                <img src="image/a17.jpg" alt="Asus ROG Zephyrus G14">
+                <h3>Asus ROG Zephyrus G14</h3>
+                <p>CPU: Ryzen 9 6900HS, GPU: RTX 3060, RAM: 16GB, SSD: 1TB, Màn hình: 14" QHD 120Hz</p>
+                <p>Giá: 50,000,000 VND</p>
+                <a href="checkout.html" class="purchase-button">Mua Ngay</a>
+                <a href="#" class="add-to-cart-button" data-url="checkout.html">
+                    <img src="https://png.pngtree.com/png-vector/20191030/ourlarge/pngtree-cart-plain-shoping-trolly-icon-vector-illustration-for-web-png-image_1927620.jpg" alt="Giỏ hàng">
+                </a>
+                <p><strong style="color: green;">Hàng sẵn sàng</strong></p>
+            </div>
+            <div class="product" data-name="Asus ROG Flow X13" data-specs="CPU: Ryzen 7 6800HS, GPU: RTX 3050 Ti, RAM: 16GB, SSD: 1TB, Màn hình: 13.4&quot; FHD 120Hz" data-price="55,000,000 VND" data-availability="Hàng sẵn sàng" data-image="image/a18.jpg" onclick="showDetails(this)">
+                <img src="image/a18.jpg" alt="Asus ROG Flow X13">
+                <h3>Asus ROG Flow X13</h3>
+                <p>CPU: Ryzen 7 6800HS, GPU: RTX 3050 Ti, RAM: 16GB, SSD: 1TB, Màn hình: 13.4" FHD 120Hz</p>
+                <p>Giá: 55,000,000 VND</p>
+                <a href="checkout.html" class="purchase-button">Mua Ngay</a>
+                <a href="#" class="add-to-cart-button" data-url="checkout.html">
+                    <img src="https://png.pngtree.com/png-vector/20191030/ourlarge/pngtree-cart-plain-shoping-trolly-icon-vector-illustration-for-web-png-image_1927620.jpg" alt="Giỏ hàng">
+                </a>
+                <p><strong style="color: green;">Hàng sẵn sàng</strong></p>
+            </div>
+            <div class="product" data-name="Asus ROG Strix SCAR 15" data-specs="CPU: Intel i9-12900H, GPU: RTX 3080 Ti, RAM: 32GB, SSD: 2TB, Màn hình: 15.6&quot; QHD 240Hz" data-price="85,000,000 VND" data-availability="Hàng sẵn sàng" data-image="image/a19.jpg" onclick="showDetails(this)">
+                <img src="image/a19.jpg" alt="Asus ROG Strix SCAR 15">
+                <h3>Asus ROG Strix SCAR 15</h3>
+                <p>CPU: Intel i9-12900H, GPU: RTX 3080 Ti, RAM: 32GB, SSD: 2TB, Màn hình: 15.6" QHD 240Hz</p>
+                <p>Giá: 85,000,000 VND</p>
+                <a href="checkout.html" class="purchase-button">Mua Ngay</a>
+                <a href="#" class="add-to-cart-button" data-url="checkout.html">
+                    <img src="https://png.pngtree.com/png-vector/20191030/ourlarge/pngtree-cart-plain-shoping-trolly-icon-vector-illustration-for-web-png-image_1927620.jpg" alt="Giỏ hàng">
+                </a>
+                <p><strong style="color: green;">Hàng sẵn sàng</strong></p>
+            </div>
+            <div class="product" data-name="Acer Predator Helios 300" data-specs="CPU: Intel i7-11800H, GPU: RTX 3060, RAM: 16GB, SSD: 512GB, Màn hình: 15.6&quot; FHD 144Hz" data-price="40,000,000 VND" data-availability="Hàng sẵn sàng" data-image="image/a20.jpg" onclick="showDetails(this)">
+                <img src="image/a20.jpg" alt="Acer Predator Helios 300">
+                <h3>Acer Predator Helios 300</h3>
+                <p>CPU: Intel i7-11800H, GPU: RTX 3060, RAM: 16GB, SSD: 512GB, Màn hình: 15.6" FHD 144Hz</p>
+                <p>Giá: 40,000,000 VND</p>
+                <a href="checkout.html" class="purchase-button">Mua Ngay</a>
+                <a href="#" class="add-to-cart-button" data-url="checkout.html">
+                    <img src="https://png.pngtree.com/png-vector/20191030/ourlarge/pngtree-cart-plain-shoping-trolly-icon-vector-illustration-for-web-png-image_1927620.jpg" alt="Giỏ hàng">
+                </a>
+                <p><strong style="color: green;">Hàng sẵn sàng</strong></p>
+            </div>
+            <div class="product" data-name="Acer Nitro 5" data-specs="CPU: Ryzen 7 5800H, GPU: RTX 3050, RAM: 16GB, SSD: 512GB, Màn hình: 15.6&quot; FHD 144Hz" data-price="30,000,000 VND" data-availability="Hàng sẵn sàng" data-image="image/a21.jpg" onclick="showDetails(this)">
+                <img src="image/a21.jpg" alt="Acer Nitro 5">
+                <h3>Acer Nitro 5</h3>
+                <p>CPU: Ryzen 7 5800H, GPU: RTX 3050, RAM: 16GB, SSD: 512GB, Màn hình: 15.6" FHD 144Hz</p>
+                <p>Giá: 30,000,000 VND</p>
+                <a href="checkout.html" class="purchase-button">Mua Ngay</a>
+                <a href="#" class="add-to-cart-button" data-url="checkout.html">
+                    <img src="https://png.pngtree.com/png-vector/20191030/ourlarge/pngtree-cart-plain-shoping-trolly-icon-vector-illustration-for-web-png-image_1927620.jpg" alt="Giỏ hàng">
+                </a>
+                <p><strong style="color: green;">Hàng sẵn sàng</strong></p>
+            </div>
+            <div class="product" data-name="Acer Predator Triton 500 SE" data-specs="CPU: Intel i9-11900H, GPU: RTX 3080, RAM: 32GB, SSD: 1TB, Màn hình: 16&quot; QHD 165Hz" data-price="60,000,000 VND" data-availability="Hàng sẵn sàng" data-image="image/a22.jpg" onclick="showDetails(this)">
+                <img src="image/a22.jpg" alt="Acer Predator Triton 500 SE">
+                <h3>Acer Predator Triton 500 SE</h3>
+                <p>CPU: Intel i9-11900H, GPU: RTX 3080, RAM: 32GB, SSD: 1TB, Màn hình: 16" QHD 165Hz</p>
+                <p>Giá: 60,000,000 VND</p>
+                <a href="checkout.html" class="purchase-button">Mua Ngay</a>
+                <a href="#" class="add-to-cart-button" data-url="checkout.html">
+                    <img src="https://png.pngtree.com/png-vector/20191030/ourlarge/pngtree-cart-plain-shoping-trolly-icon-vector-illustration-for-web-png-image_1927620.jpg" alt="Giỏ hàng">
+                </a>
+                <p><strong style="color: green;">Hàng sẵn sàng</strong></p>
+            </div>
+            <div class="product" data-name="MSI GE66 Raider" data-specs="CPU: Intel i9-11980HK, GPU: RTX 3080, RAM: 32GB, SSD: 1TB, Màn hình: 15.6&quot; QHD 240Hz" data-price="65,000,000 VND" data-availability="Hàng sẵn sàng" data-image="image/a23.jpg" onclick="showDetails(this)">
+                <img src="image/a23.jpg" alt="MSI GE66 Raider">
+                <h3>MSI GE66 Raider</h3>
+                <p>CPU: Intel i9-11980HK, GPU: RTX 3080, RAM: 32GB, SSD: 1TB, Màn hình: 15.6" QHD 240Hz</p>
+                <p>Giá: 65,000,000 VND</p>
+                <a href="checkout.html" class="purchase-button">Mua Ngay</a>
+                <a href="#" class="add-to-cart-button" data-url="checkout.html">
+                    <img src="https://png.pngtree.com/png-vector/20191030/ourlarge/pngtree-cart-plain-shoping-trolly-icon-vector-illustration-for-web-png-image_1927620.jpg" alt="Giỏ hàng">
+                </a>
+                <p><strong style="color: green;">Hàng sẵn sàng</strong></p>
+            </div>
+            <div class="product" data-name="MSI GF63 Thin" data-specs="CPU: Intel i7-10750H, GPU: GTX 1650, RAM: 8GB, SSD: 512GB, Màn hình: 15.6&quot; FHD 144Hz" data-price="25,000,000 VND" data-availability="Hàng sẵn sàng" data-image="image/a24.jpg" onclick="showDetails(this)">
+                <img src="image/a24.jpg" alt="MSI GF63 Thin">
+                <h3>MSI GF63 Thin</h3>
+                <p>CPU: Intel i7-10750H, GPU: GTX 1650, RAM: 8GB, SSD: 512GB, Màn hình: 15.6" FHD 144Hz</p>
+                <p>Giá: 25,000,000 VND</p>
+                <a href="checkout.html" class="purchase-button">Mua Ngay</a>
+                <a href="#" class="add-to-cart-button" data-url="checkout.html">
+                    <img src="https://png.pngtree.com/png-vector/20191030/ourlarge/pngtree-cart-plain-shoping-trolly-icon-vector-illustration-for-web-png-image_1927620.jpg" alt="Giỏ hàng">
+                </a>
+                <p><strong style="color: green;">Hàng sẵn sàng</strong></p>
+            </div>
+            <div class="product" data-name="MSI Stealth 15M" data-specs="CPU: Intel i7-11375H, GPU: RTX 3060, RAM: 16GB, SSD: 512GB, Màn hình: 15.6&quot; FHD 144Hz" data-price="50,000,000 VND" data-availability="Hàng sẵn sàng" data-image="image/a25.jpg" onclick="showDetails(this)">
+                <img src="image/a25.jpg" alt="MSI Stealth 15M">
+                <h3>MSI Stealth 15M</h3>
+                <p>CPU: Intel i7-11375H, GPU: RTX 3060, RAM: 16GB, SSD: 512GB, Màn hình: 15.6" FHD 144Hz</p>
+                <p>Giá: 50,000,000 VND</p>
+                <a href="checkout.html" class="purchase-button">Mua Ngay</a>
+                <a href="#" class="add-to-cart-button" data-url="checkout.html">
+                    <img src="https://png.pngtree.com/png-vector/20191030/ourlarge/pngtree-cart-plain-shoping-trolly-icon-vector-illustration-for-web-png-image_1927620.jpg" alt="Giỏ hàng">
+                </a>
+                <p><strong style="color: green;">Hàng sẵn sàng</strong></p>
+            </div>
+            <div class="product" data-name="HP Omen 15" data-specs="CPU: Ryzen 7 5800H, GPU: RTX 3060, RAM: 16GB, SSD: 512GB, Màn hình: 15.6&quot; FHD 144Hz" data-price="38,000,000 VND" data-availability="Hàng sẵn sàng" data-image="image/a26.jpg" onclick="showDetails(this)">
+                <img src="image/a26.jpg" alt="HP Omen 15">
+                <h3>HP Omen 15</h3>
+                <p>CPU: Ryzen 7 5800H, GPU: RTX 3060, RAM: 16GB, SSD: 512GB, Màn hình: 15.6" FHD 144Hz</p>
+                <p>Giá: 38,000,000 VND</p>
+                <a href="checkout.html" class="purchase-button">Mua Ngay</a>
+                <a href="#" class="add-to-cart-button" data-url="checkout.html">
+                    <img src="https://png.pngtree.com/png-vector/20191030/ourlarge/pngtree-cart-plain-shoping-trolly-icon-vector-illustration-for-web-png-image_1927620.jpg" alt="Giỏ hàng">
+                </a>
+                <p><strong style="color: green;">Hàng sẵn sàng</strong></p>
+            </div>
+            <div class="product" data-name="HP Victus 16" data-specs="CPU: Intel i7-12700H, GPU: RTX 3050 Ti, RAM: 16GB, SSD: 512GB, Màn hình: 16.1&quot; FHD 144Hz" data-price="35,000,000 VND" data-availability="Hàng sẵn sàng" data-image="image/a27.jpg" onclick="showDetails(this)">
+                <img src="image/a27.jpg" alt="HP Victus 16">
+                <h3>HP Victus 16</h3>
+                <p>CPU: Intel i7-12700H, GPU: RTX 3050 Ti, RAM: 16GB, SSD: 512GB, Màn hình: 16.1" FHD 144Hz</p>
+                <p>Giá: 35,000,000 VND</p>
+                <a href="checkout.html" class="purchase-button">Mua Ngay</a>
+                <a href="#" class="add-to-cart-button" data-url="checkout.html">
+                    <img src="https://png.pngtree.com/png-vector/20191030/ourlarge/pngtree-cart-plain-shoping-trolly-icon-vector-illustration-for-web-png-image_1927620.jpg" alt="Giỏ hàng">
+                </a>
+                <p><strong style="color: green;">Hàng sẵn sàng</strong></p>
+            </div>
+            <div class="product" data-name="HP Pavilion Gaming 15" data-specs="CPU: Intel i5-11300H, GPU: GTX 1650, RAM: 8GB, SSD: 256GB, Màn hình: 15.6&quot; FHD 144Hz" data-price="28,000,000 VND" data-availability="Hàng sẵn sàng" data-image="image/a28.jpg" onclick="showDetails(this)">
+                <img src="image/a28.jpg" alt="HP Pavilion Gaming 15">
+                <h3>HP Pavilion Gaming 15</h3>
+                <p>CPU: Intel i5-11300H, GPU: GTX 1650, RAM: 8GB, SSD: 256GB, Màn hình: 15.6" FHD 144Hz</p>
+                <p>Giá: 28,000,000 VND</p>
+                <a href="checkout.html" class="purchase-button">Mua Ngay</a>
+                <a href="#" class="add-to-cart-button" data-url="checkout.html">
+                    <img src="https://png.pngtree.com/png-vector/20191030/ourlarge/pngtree-cart-plain-shoping-trolly-icon-vector-illustration-for-web-png-image_1927620.jpg" alt="Giỏ hàng">
+                </a>
+                <p><strong style="color: green;">Hàng sẵn sàng</strong></p>
+            </div>
+            <div class="product" data-name="Lenovo Legion 5 Pro" data-specs="CPU: Ryzen 7 5800H, GPU: RTX 3070, RAM: 16GB, SSD: 1TB, Màn hình: 16&quot; QHD 165Hz" data-price="47,000,000 VND" data-availability="Hàng sẵn sàng" data-image="image/a29.jpg" onclick="showDetails(this)">
+                <img src="image/a29.jpg" alt="Lenovo Legion 5 Pro">
+                <h3>Lenovo Legion 5 Pro</h3>
+                <p>CPU: Ryzen 7 5800H, GPU: RTX 3070, RAM: 16GB, SSD: 1TB, Màn hình: 16" QHD 165Hz</p>
+                <p>Giá: 47,000,000 VND</p>
+                <a href="checkout.html" class="purchase-button">Mua Ngay</a>
+                <a href="#" class="add-to-cart-button" data-url="checkout.html">
+                    <img src="https://png.pngtree.com/png-vector/20191030/ourlarge/pngtree-cart-plain-shoping-trolly-icon-vector-illustration-for-web-png-image_1927620.jpg" alt="Giỏ hàng">
+                </a>
+                <p><strong style="color: green;">Hàng sẵn sàng</strong></p>
+            </div>
+            <div class="product" data-name="Lenovo IdeaPad Gaming 3" data-specs="CPU: Ryzen 5 5600H, GPU: RTX 3050, RAM: 8GB, SSD: 512GB, Màn hình: 15.6&quot; FHD 120Hz" data-price="30,000,000 VND" data-availability="Hàng sẵn sàng" data-image="image/a30.jpg" onclick="showDetails(this)">
+                <img src="image/a30.jpg" alt="Lenovo IdeaPad Gaming 3">
+                <h3>Lenovo IdeaPad Gaming 3</h3>
+                <p>CPU: Ryzen 5 5600H, GPU: RTX 3050, RAM: 8GB, SSD: 512GB, Màn hình: 15.6" FHD 120Hz</p>
+                <p>Giá: 30,000,000 VND</p>
+                <a href="checkout.html" class="purchase-button">Mua Ngay</a>
+                <a href="#" class="add-to-cart-button" data-url="checkout.html">
+                    <img src="https://png.pngtree.com/png-vector/20191030/ourlarge/pngtree-cart-plain-shoping-trolly-icon-vector-illustration-for-web-png-image_1927620.jpg" alt="Giỏ hàng">
+                </a>
+                <p><strong style="color: green;">Hàng sẵn sàng</strong></p>
+            </div>
+            <div class="product" data-name="Lenovo Legion 7" data-specs="CPU: Ryzen 9 5900HX, GPU: RTX 3080, RAM: 32GB, SSD: 1TB, Màn hình: 16&quot; QHD 165Hz" data-price="70,000,000 VND" data-availability="Hàng sẵn sàng" data-image="image/a31.jpg" onclick="showDetails(this)">
+                <img src="image/a31.jpg" alt="Lenovo Legion 7">
+                <h3>Lenovo Legion 7</h3>
+                <p>CPU: Ryzen 9 5900HX, GPU: RTX 3080, RAM: 32GB, SSD: 1TB, Màn hình: 16" QHD 165Hz</p>
+                <p>Giá: 70,000,000 VND</p>
+                <a href="checkout.html" class="purchase-button">Mua Ngay</a>
+                <a href="#" class="add-to-cart-button" data-url="checkout.html">
+                    <img src="https://png.pngtree.com/png-vector/20191030/ourlarge/pngtree-cart-plain-shoping-trolly-icon-vector-illustration-for-web-png-image_1927620.jpg" alt="Giỏ hàng">
+                </a>
+                <p><strong style="color: green;">Hàng sẵn sàng</strong></p>
+            </div>
+            <div class="product" data-name="Dell G15 Gaming" data-specs="CPU: Intel i7-11800H, GPU: RTX 3050 Ti, RAM: 16GB, SSD: 512GB, Màn hình: 15.6&quot; FHD 120Hz" data-price="35,000,000 VND" data-availability="Hàng sẵn sàng" data-image="image/a32.jpg" onclick="showDetails(this)">
+                <img src="image/a32.jpg" alt="Dell G15 Gaming">
+                <h3>Dell G15 Gaming</h3>
+                <p>CPU: Intel i7-11800H, GPU: RTX 3050 Ti, RAM: 16GB, SSD: 512GB, Màn hình: 15.6" FHD 120Hz</p>
+                <p>Giá: 35,000,000 VND</p>
+                <a href="checkout.html" class="purchase-button">Mua Ngay</a>
+                <a href="#" class="add-to-cart-button" data-url="checkout.html">
+                    <img src="https://png.pngtree.com/png-vector/20191030/ourlarge/pngtree-cart-plain-shoping-trolly-icon-vector-illustration-for-web-png-image_1927620.jpg" alt="Giỏ hàng">
+                </a>
+                <p><strong style="color: green;">Hàng sẵn sàng</strong></p>
+            </div>
+            <div class="product" data-name="Dell Alienware m15 R6" data-specs="CPU: Intel i9-11900H, GPU: RTX 3080, RAM: 32GB, SSD: 1TB, Màn hình: 15.6&quot; QHD 240Hz" data-price="75,000,000 VND" data-availability="Hàng sẵn sàng" data-image="image/a33.jpg" onclick="showDetails(this)">
+                <img src="image/a33.jpg" alt="Dell Alienware m15 R6">
+                <h3>Dell Alienware m15 R6</h3>
+                <p>CPU: Intel i9-11900H, GPU: RTX 3080, RAM: 32GB, SSD: 1TB, Màn hình: 15.6" QHD 240Hz</p>
+                <p>Giá: 75,000,000 VND</p>
+                <a href="checkout.html" class="purchase-button">Mua Ngay</a>
+                <a href="#" class="add-to-cart-button" data-url="checkout.html">
+                    <img src="https://png.pngtree.com/png-vector/20191030/ourlarge/pngtree-cart-plain-shoping-trolly-icon-vector-illustration-for-web-png-image_1927620.jpg" alt="Giỏ hàng">
+                </a>
+                <p><strong style="color: green;">Hàng sẵn sàng</strong></p>
+            </div>
+            <div class="product" data-name="ASUS ROG Zephyrus G14" data-specs="CPU: Ryzen 9 5900HS, GPU: RTX 3060, RAM: 16GB, SSD: 1TB, Màn hình: 14&quot; QHD 144Hz" data-price="60,000,000 VND" data-availability="Hàng sẵn sàng" data-image="image/a34.jpg" onclick="showDetails(this)">
+                <img src="image/a34.jpg" alt="ASUS ROG Zephyrus G14">
+                <h3>ASUS ROG Zephyrus G14</h3>
+                <p>CPU: Ryzen 9 5900HS, GPU: RTX 3060, RAM: 16GB, SSD: 1TB, Màn hình: 14" QHD 144Hz</p>
+                <p>Giá: 60,000,000 VND</p>
+                <a href="checkout.html" class="purchase-button">Mua Ngay</a>
+                <a href="#" class="add-to-cart-button" data-url="checkout.html">
+                    <img src="https://png.pngtree.com/png-vector/20191030/ourlarge/pngtree-cart-plain-shoping-trolly-icon-vector-illustration-for-web-png-image_1927620.jpg" alt="Giỏ hàng">
+                </a>
+                <p><strong style="color: green;">Hàng sẵn sàng</strong></p>
+            </div>
+    </section>
+
+    <!-- Bảng chi tiết sản phẩm -->
+<div id="details" class="popup" style="display:none;">
+    <span class="close" onclick="hideDetails()" style="cursor: pointer;">&times;</span> 
+    <img id="details-image" src="" alt="Hình ảnh sản phẩm">
+    <h3 id="details-name"></h3>
+    <p id="details-specs"></p>
+    <p id="details-price"></p>
+    <p id="details-availability"></p>
+</div>
+    <!-- Phần footer -->
+    <footer>
+        <p>&copy; 2024 Cửa Hàng Bán PC & Laptop Cao Cấp. Thiết kế bởi [Team 4 Ae]</p>
+    </footer>
+  
+ <!-- Liên kết tệp JavaScript ở đây -->
+ <script src="JS/Tong.js"></script>
+
+</body>
+</html>

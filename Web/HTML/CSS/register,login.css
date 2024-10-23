@@ -1,0 +1,262 @@
+/* Cấu trúc tổng thể */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+}
+.container {
+    max-width: 500px; /* Đặt chiều rộng tối đa cho container */
+    margin: 50px auto; /* Tạo khoảng cách cho container */
+    padding: 30px; /* Padding cho container */
+    background-color: white; /* Màu nền của container */
+    border-radius: 12px; /* Bo góc của container */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Bóng đổ cho container */
+    display: flex; /* Sử dụng flexbox để căn giữa */
+    flex-direction: column; /* Căn giữa theo chiều dọc */
+    align-items: center; /* Căn giữa các phần tử con */
+
+}
+h2 {
+    text-align: center;
+    color: #333;
+}
+/* Phần header */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #0a0768;
+    color: #ffffff;
+    border-bottom: 4px solid #007bff;
+}
+
+header img {
+    vertical-align: middle;
+    border-radius: 50%;
+    border: 3px solid #ffffff;
+}
+
+header h1 {
+    margin: 10px 0;
+    font-size: 2.5rem;
+}
+
+header p {
+    font-style: italic;
+    color: #b0b3b8;
+}
+.header-right {
+position: absolute;
+top: 20px; /* Khoảng cách từ trên xuống */
+right: 20px; /* Khoảng cách từ phải vào */
+font-size: 16px;
+}
+
+.header-right a {
+color: white;
+text-decoration: none;
+margin-left: 15px;
+padding: 10px;
+background-color: #2e58b3; /* Màu nền nút */
+border-radius: 5px;
+transition: background-color 0.3s;
+}
+
+.header-right a:hover {
+background-color: #45a049;
+}
+
+/* Thanh điều hướng */
+nav {
+    position: relative; /* Đặt relative để giỏ hàng có thể định vị bằng absolute */
+    display: flex;
+    justify-content: center; /* Căn giữa các liên kết */
+    align-items: center;
+    background-color: #007bff;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav .nav-links {
+    display: flex;
+    justify-content: center; /* Căn giữa các liên kết */
+}
+
+nav .nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #0056b3;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+nav .nav-links a:hover {
+    background-color: #004494;
+    transform: scale(1.05);
+}
+
+/* Phần giỏ hàng trong thanh điều hướng */
+.cart-container {
+    position: absolute; /* Giỏ hàng nằm ở góc phải */
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+}
+
+.cart-container img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.cart-container a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: transparent;
+}
+
+/* Tiêu đề và phần nội dung chính */
+h1 {
+    text-align: center;
+    color: #ffffff;
+}
+h2 {
+    text-align: center;
+    color: #073a6d;
+}
+
+
+/* Phần footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #343a40;
+    color: white;
+    margin-top: 20px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Nút Thêm vào Giỏ Hàng */
+.add-to-cart {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #218838;
+}
+/* Các nút điều hướng */
+.prev, .next {
+cursor: pointer;
+position: absolute;
+top: 50%;
+padding: 16px;
+color: white;
+font-weight: bold;
+font-size: 12px;
+transition: background-color 0.6s ease;
+border-radius: 0 3px 3px 0;
+background-color: rgba(0, 0, 0, 0.5); /* Màu nền nút điều hướng */
+user-select: none;
+transform: translateY(-50%);
+}
+
+.next {
+right: 0;
+border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Chấm tròn chỉ số slide */
+.dot-container {
+text-align: center;
+padding: 15px 0;
+background: #333;
+}
+
+.dot {
+cursor: pointer;
+height: 5px;
+width: 5px;
+margin: 0 5px;
+background-color: #bbb;
+border-radius: 50%;
+display: inline-block;
+transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+background-color: #717171;
+}
+/* Nhãn cho các trường nhập liệu */
+label {
+    margin: 5px 0; /* Tạo khoảng cách giữa nhãn và trường nhập liệu */
+    color: #333; /* Màu chữ cho nhãn */
+    text-align: left; /* Căn trái cho nhãn */
+    width: 80%; /* Đặt chiều rộng nhãn giống như trường nhập liệu */
+}
+
+/* Các trường nhập liệu */
+input[type="text"], 
+input[type="password"], 
+input[type="email"], 
+input[type="tel"], 
+input[type="date"], 
+select {
+    width: 80%; /* Thay đổi chiều rộng để không chiếm toàn bộ chiều rộng */
+    max-width: 400px; /* Đặt chiều rộng tối đa cho các trường */
+    padding: 12px; /* Padding giống nhau */
+    margin: 5px auto 10px; /* Khoảng cách dưới mỗi trường và căn giữa */
+    display: block; /* Đảm bảo mỗi trường nằm trên một dòng riêng */
+    border: 1px solid #ccc; /* Viền đồng nhất */
+    border-radius: 5px; /* Bo góc đồng nhất */
+    box-sizing: border-box; /* Tính toán chiều rộng bao gồm cả padding và border */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng chuyển màu và bóng */
+}
+
+/* Hiệu ứng khi trường nhập liệu được chọn */
+input[type="text"]:focus, 
+input[type="password"]:focus, 
+input[type="email"]:focus, 
+input[type="tel"]:focus, 
+input[type="date"]:focus, 
+select:focus {
+    border-color: #007bff; /* Màu viền khi focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Hiệu ứng bóng */
+}
+
+/* Nút Đăng Ký */
+.button {
+    width: 80%; /* Đảm bảo nút có chiều rộng giống các trường nhập liệu */
+    max-width: 400px; /* Chiều rộng tối đa cho nút */
+    padding: 12px; /* Padding cho nút */
+    background-color: #4CAF50; /* Màu nền cho nút */
+    color: white; /* Màu chữ cho nút */
+    border: none; /* Bỏ viền */
+    border-radius: 5px; /* Bo góc cho nút */
+    cursor: pointer; /* Hiển thị con trỏ tay khi hover */
+    transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu */
+    margin-top: 10px; /* Khoảng cách trên cho nút */
+}
+
+.button:hover {
+    background-color: #45a049; /* Màu nền khi hover */
+
+}

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh Sách Sản Phẩm Phụ Kiện Cao Cấp</title>
+    <link rel="stylesheet" href="CSS/Tong.css">
+    <!-- Phần header -->
+    <header>
+        <img src="https://tse1.mm.bing.net/th?id=OIG3.i3Ic.6ZzI7x9LscStFqg&pid=ImgGn" alt="Logo của cửa hàng" width="100" height="100">
+        <h1>Cửa Hàng Bán PC & Laptop Cao Cấp</h1>
+        <div class="header-right">
+            <a href="login.html">Đăng Nhập</a>
+            <a href="register.html">Đăng Ký</a>
+        </div>
+        
+        <p>Chất lượng - Uy tín - Giá cả hợp lý</p>
+    </header>
+
+    <!-- Thanh điều hướng -->
+    <nav>
+        <div class="nav-links">
+            <a href="home.html">Trang Chủ</a>
+            <a href="pc.html">PC Gaming</a>
+            <a href="laptop.html">Laptop</a>
+            <a href="phukien.html">Phụ Kiện</a>
+            <a href="tintuc.html">Tin Tức</a>
+            <a href="lienhe.html">Liên Hệ</a>
+        </div>
+
+        <!-- Giỏ hàng nằm ở góc phải -->
+        <div class="cart-container">
+            <img src="https://png.pngtree.com/png-vector/20191030/ourlarge/pngtree-cart-plain-shoping-trolly-icon-vector-illustration-for-web-png-image_1927620.jpg" alt="Giỏ hàng">
+            <a href="cart.html">Xem Giỏ Hàng</a>
+        </div>
+    </nav>
+<div class="slideshow-container">
+    <!-- Hình ảnh -->
+    <div class="slides">
+        <img src="https://laptop88.vn/media/news/2803_1200x628px.jpg" alt="Laptop 1">
+    </div>
+    <div class="slides">
+        <img src="https://hanoicomputercdn.com/media/news/1295_pc_dong_bo__laptop_1200x675.png" alt="Laptop 2">
+    </div>
+    <div class="slides">
+        <img src="https://minhancomputercdn.com/media/news/712_banner_chuong_trinh_khuyen_mai_network_mua_ban_phim.jpg" alt="Laptop 3">
+    </div>
+    <div class="slides">
+        <img src="D:\d68e64d6-b8e1-4ce4-9f8f-13c4348bc0da.png" alt="Laptop 4">
+    </div>
+
+    <!-- Nút điều hướng -->
+    <a class="prev">&#10094;</a>
+    <a class="next">&#10095;</a>
+</div>
+
+<!-- Chấm tròn chỉ số slide -->
+<div class="dot-container">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+</div>
+
+   <!-- Phần nội dung chính -->
+<div class="container">
+    <section id="pc">
+        <h2>Danh Sách Sản Phẩm PC Cao Cấp</h2>
+        <div class="product-grid">
+            <div class="product" data-name="Asus ExpertCenter D500" data-specs="CPU: Intel i5-11400, RAM: 8GB, SSD: 512GB, HDD: 1TB, VGA: Intel UHD Graphics 730" data-price="15,000,000 VND" data-availability="Hàng sẵn sàng" data-image="image/a1.jpg" onclick="showDetails(this)">
+                <img src="image/a1.jpg" alt="Asus ExpertCenter D500">
+                <h3>Asus ExpertCenter D500</h3>
+                <p>CPU: Intel i5-11400, RAM: 8GB, SSD: 512GB, HDD: 1TB, VGA: Intel UHD Graphics 730</p>
+                <p>Giá: 15,000,000 VND</p>
+                <a href="checkout.html" class="purchase-button">Mua Ngay</a>
+                <a href="#" class="add-to-cart-button" data-url="checkout.html">
+                    <img src="https://png.pngtree.com/png-vector/20191030/ourlarge/pngtree-cart-plain-shoping-trolly-icon-vector-illustration-for-web-png-image_1927620.jpg" alt="Giỏ hàng">
+                </a>
+                <p><strong style="color: green;">Hàng sẵn sàng</strong></p>
+            </div>
+            <div class="product" data-name="Asus S500MA" data-specs="CPU: Intel i7-11700, RAM: 16GB, SSD: 1TB, HDD: 2TB, VGA: Intel UHD Graphics 750" data-price="25,000,000 VND" data-availability="Hàng sẵn sàng" data-image="image/a2.jpg" onclick="showDetails(this)">
+                <img src="image/a2.jpg" alt="Asus S500MA">
+                <h3>Asus S500MA</h3>
+                <p>CPU: Intel i7-11700, RAM: 16GB, SSD: 1TB, HDD: 2TB, VGA: Intel UHD Graphics 750</p>
+                <p>Giá: 25,000,000 VND</p>
+                <a href="checkout.html" class="purchase-button">Mua Ngay</a>
+                <a href="#" class="add-to-cart-button" data-url="checkout.html">
+                    <img src="https://png.pngtree.com/png-vector/20191030/ourlarge/pngtree-cart-plain-shoping-trolly-icon-vector-illustration-for-web-png-image_1927620.jpg" alt="Giỏ hàng">
+                </a>
+                <p><strong style="color: green;">Hàng sẵn sàng</strong></p>
+            </div>
+            <div class="product" data-name="Asus VivoPC VM42" data-specs="CPU: Intel i3-4005U, RAM: 4GB, SSD: 128GB, VGA: Intel HD Graphics" data-price="10,000,000 VND" data-availability="Hàng sẵn sàng" data-image="image/a3.jpg" onclick="showDetails(this)">
+                <img src="image/a3.jpg" alt="Asus VivoPC VM42">
+                <h3>Asus VivoPC VM42</h3>
+                <p>CPU: Intel i3-4005U, RAM: 4GB, SSD: 128GB, VGA: Intel HD Graphics</p>
+                <p>Giá: 10,000,000 VND</p>
+                <a href="checkout.html" class="purchase-button">Mua Ngay</a>
+                <a href="#" class="add-to-cart-button" data-url="checkout.html">
+                    <img src="https://png.pngtree.com/png-vector/20191030/ourlarge/pngtree-cart-plain-shoping-trolly-icon-vector-illustration-for-web-png-image_1927620.jpg" alt="Giỏ hàng">
+                </a>
+                <p><strong style="color: green;">Hàng sẵn sàng</strong></p>
+            </div>
+            <div class="product" data-name="Acer Aspire TC" data-specs="CPU: Intel i5-10400, RAM: 8GB, SSD: 512GB, VGA: Intel UHD Graphics 630" data-price="14,000,000 VND" data-availability="Hàng sẵn sàng" data-image="image/a4.jpg" onclick="showDetails(this)">
+                <img src="image/a4.jpg" alt="Acer Aspire TC">
+                <h3>Acer Aspire TC</h3>
+                <p>CPU: Intel i5-10400, RAM: 8GB, SSD: 512GB, VGA: Intel UHD Graphics 630</p>
+                <p>Giá: 14,000,000 VND</p>
+                <a href="checkout.html" class="purchase-button">Mua Ngay</a>
+                <a href="#" class="add-to-cart-button" data-url="checkout.html">
+                    <img src="https://png.pngtree.com/png-vector/20191030/ourlarge/pngtree-cart-plain-shoping-trolly-icon-vector-illustration-for-web-png-image_1927620.jpg" alt="Giỏ hàng">
+                </a>
+                <p><strong style="color: green;">Hàng sẵn sàng</strong></p>
+            </div>
+            <div class="product" data-name="Acer Veriton X" data-specs="CPU: Intel i7-10700, RAM: 16GB, SSD: 1TB, VGA: Intel UHD Graphics 630" data-price="20,000,000 VND" data-availability="Hàng sẵn sàng" data-image="image/a5.jpg" onclick="showDetails(this)">
+                <img src="image/a5.jpg" alt="Acer Veriton X">
+                <h3>Acer Veriton X</h3>
+                <p>CPU: Intel i7-10700, RAM: 16GB, SSD: 1TB, VGA: Intel UHD Graphics 630</p>
+                <p>Giá: 20,000,000 VND</p>
+                <a href="checkout.html" class="purchase-button">Mua Ngay</a>
+                <a href="#" class="add-to-cart-button" data-url="checkout.html">
+                    <img src="https://png.pngtree.com/png-vector/20191030/ourlarge/pngtree-cart-plain-shoping-trolly-icon-vector-illustration-for-web-png-image_1927620.jpg" alt="Giỏ hàng">
+                </a>
+                <p><strong style="color: green;">Hàng sẵn sàng</strong></p>
+            </div>
+            <div class="product" data-name="Acer Aspire GX" data-specs="CPU: Intel i7-7700, RAM: 16GB, SSD: 512GB, VGA: NVIDIA GTX 1060" data-price="25,000,000 VND" data-availability="Hàng sẵn sàng" data-image="image/a6.jpg" onclick="showDetails(this)">
+                <img src="image/a6.jpg" alt="Acer Aspire GX">
+                <h3>Acer Aspire GX</h3>
+                <p>CPU: Intel i7-7700, RAM: 16GB, SSD: 512GB, VGA: NVIDIA GTX 1060</p>
+                <p>Giá: 25,000,000 VND</p>
+                <a href="checkout.html" class="purchase-button">Mua Ngay</a>
+                <a href="#" class="add-to-cart-button" data-url="checkout.html">
+                    <img src="https://png.pngtree.com/png-vector/20191030/ourlarge/pngtree-cart-plain-shoping-trolly-icon-vector-illustration-for-web-png-image_1927620.jpg" alt="Giỏ hàng">
+                </a>
+                <p><strong style="color: green;">Hàng sẵn sàng</strong></p>
+            </div>
+            <div class="product" data-name="MSI Modern AM241" data-specs="CPU: Intel i5-1135G7, RAM: 8GB, SSD: 512GB, VGA: Intel Iris Xe Graphics" data-price="19,000,000 VND" data-availability="Hàng sẵn sàng" data-image="image/a7.jpg" onclick="showDetails(this)">
+                <img src="image/a7.jpg" alt="MSI Modern AM241">
+                <h3>MSI Modern AM241</h3>
+                <p>CPU: Intel i5-1135G7, RAM: 8GB, SSD: 512GB, VGA: Intel Iris Xe Graphics</p>
+                <p>Giá: 19,000,000 VND</p>
+                <a href="checkout.html" class="purchase-button">Mua Ngay</a>
+                <a href="#" class="add-to-cart-button" data-url="checkout.html">
+                    <img src="https://png.pngtree.com/png-vector/20191030/ourlarge/pngtree-cart-plain-shoping-trolly-icon-vector-illustration-for-web-png-image_1927620.jpg" alt="Giỏ hàng">
+                </a>
+                <p><strong style="color: green;">Hàng sẵn sàng</strong></p>
+            </div>
+            <div class="product" data-name="MSI PRO DP20Z" data-specs="CPU: AMD Ryzen 5 5600G, RAM: 16GB, SSD: 512GB, VGA: Radeon Vega Graphics" data-price="21,000,000 VND" data-availability="Hàng sẵn sàng" data-image="image/a8.jpg" onclick="showDetails(this)">
+                <img src="image/a8.jpg" alt="MSI PRO DP20Z">
+                <h3>MSI PRO DP20Z</h3>
+                <p>CPU: AMD Ryzen 5 5600G, RAM: 16GB, SSD: 512GB, VGA: Radeon Vega Graphics</p>
+                <p>Giá: 21,000,000 VND</p>
+                <a href="checkout.html" class="purchase-button">Mua Ngay</a>
+                <a href="#" class="add-to-cart-button" data-url="checkout.html">
+                    <img src="https://png.pngtree.com/png-vector/20191030/ourlarge/pngtree-cart-plain-shoping-trolly-icon-vector-illustration-for-web-png-image_1927620.jpg" alt="Giỏ hàng">
+                </a>
+                <p><strong style="color: green;">Hàng sẵn sàng</strong></p>
+            </div>
+            <div class="product" data-name="MSI Trident 3" data-specs="CPU: Intel i7-10700, RAM: 16GB, SSD: 1TB, VGA: NVIDIA RTX 2060" data-price="35,000,000 VND" data-availability="Hàng sẵn sàng" data-image="image/a9.jpg" onclick="showDetails(this)">
+                <img src="image/a9.jpg" alt="MSI Trident 3">
+                <h3>MSI Trident 3</h3>
+                <p>CPU: Intel i7-10700, RAM: 16GB, SSD: 1TB, VGA: NVIDIA RTX 2060</p>
+                <p>Giá: 35,000,000 VND</p>
+                <a href="checkout.html" class="purchase-button">Mua Ngay</a>
+                <a href="#" class="add-to-cart-button" data-url="checkout.html">
+                    <img src="https://png.pngtree.com/png-vector/20191030/ourlarge/pngtree-cart-plain-shoping-trolly-icon-vector-illustration-for-web-png-image_1927620.jpg" alt="Giỏ hàng">
+                </a>
+                <p><strong style="color: green;">Hàng sẵn sàng</strong></p>
+            </div>
+            <div class="product" data-name="HP Pavilion Desktop" data-specs="CPU: Intel i5-10400, RAM: 8GB, SSD: 512GB, HDD: 1TB, VGA: Intel UHD Graphics 630" data-price="15,000,000 VND" data-availability="Hàng sẵn sàng" data-image="image/a10.jpg" onclick="showDetails(this)">
+                <img src="image/a10.jpg" alt="HP Pavilion Desktop">
+                <h3>HP Pavilion Desktop</h3>
+                <p>CPU: Intel i5-10400, RAM: 8GB, SSD: 512GB, HDD: 1TB, VGA: Intel UHD Graphics 630</p>
+                <p>Giá: 15,000,000 VND</p>
+                <a href="checkout.html" class="purchase-button">Mua Ngay</a>
+                <a href="#" class="add-to-cart-button" data-url="checkout.html">
+                    <img src="https://png.pngtree.com/png-vector/20191030/ourlarge/pngtree-cart-plain-shoping-trolly-icon-vector-illustration-for-web-png-image_1927620.jpg" alt="Giỏ hàng">
+                </a>
+                <p><strong style="color: green;">Hàng sẵn sàng</strong></p>
+            </div>
+            <div class="product" data-name="HP EliteDesk 800 G6" data-specs="CPU: Intel i7-10700, RAM: 16GB, SSD: 512GB, VGA: Intel UHD Graphics 630" data-price="28,000,000 VND" data-availability="Hàng sẵn sàng" data-image="image/a11.jpg" onclick="showDetails(this)">
+                <img src="image/a11.jpg" alt="HP EliteDesk 800 G6">
+                <h3>HP EliteDesk 800 G6</h3>
+                <p>CPU: Intel i7-10700, RAM: 16GB, SSD: 512GB, VGA: Intel UHD Graphics 630</p>
+                <p>Giá: 28,000,000 VND</p>
+                <a href="checkout.html" class="purchase-button">Mua Ngay</a>
+                <a href="#" class="add-to-cart-button" data-url="checkout.html">
+                    <img src="https://png.pngtree.com/png-vector/20191030/ourlarge/pngtree-cart-plain-shoping-trolly-icon-vector-illustration-for-web-png-image_1927620.jpg" alt="Giỏ hàng">
+                </a>
+                <p><strong style="color: green;">Hàng sẵn sàng</strong></p>
+            </div>
+            <div class="product" data-name="HP ProDesk 400 G7" data-specs="CPU: Intel i3-10100, RAM: 8GB, SSD: 256GB, VGA: Intel UHD Graphics 630" data-price="12,000,000 VND" data-availability="Hàng sẵn sàng" data-image="image/a12.jpg" onclick="showDetails(this)">
+                <img src="image/a12.jpg" alt="HP ProDesk 400 G7">
+                <h3>HP ProDesk 400 G7</h3>
+                <p>CPU: Intel i3-10100, RAM: 8GB, SSD: 256GB, VGA: Intel UHD Graphics 630</p>
+                <p>Giá: 12,000,000 VND</p>
+                <a href="checkout.html" class="purchase-button">Mua Ngay</a>
+                <a href="#" class="add-to-cart-button" data-url="checkout.html">
+                    <img src="https://png.pngtree.com/png-vector/20191030/ourlarge/pngtree-cart-plain-shoping-trolly-icon-vector-illustration-for-web-png-image_1927620.jpg" alt="Giỏ hàng">
+                </a>
+                <p><strong style="color: green;">Hàng sẵn sàng</strong></p>
+            </div>
+            <div class="product" data-name="Lenovo ThinkCentre M90t" data-specs="CPU: Intel i7-10700, RAM: 16GB, SSD: 1TB, VGA: Intel UHD Graphics 630" data-price="22,000,000 VND" data-availability="Hàng sẵn sàng" data-image="image/a13.jpg" onclick="showDetails(this)">
+                <img src="image/a13.jpg" alt="Lenovo ThinkCentre M90t">
+                <h3>Lenovo ThinkCentre M90t</h3>
+                <p>CPU: Intel i7-10700, RAM: 16GB, SSD: 1TB, VGA: Intel UHD Graphics 630</p>
+                <p>Giá: 22,000,000 VND</p>
+                <a href="checkout.html" class="purchase-button">Mua Ngay</a>
+                <a href="#" class="add-to-cart-button" data-url="checkout.html">
+                    <img src="https://png.pngtree.com/png-vector/20191030/ourlarge/pngtree-cart-plain-shoping-trolly-icon-vector-illustration-for-web-png-image_1927620.jpg" alt="Giỏ hàng">
+                </a>
+                <p><strong style="color: green;">Hàng sẵn sàng</strong></p>
+            </div>
+            <div class="product" data-name="Lenovo IdeaCentre 3" data-specs="CPU: AMD Ryzen 5 3500U, RAM: 8GB, SSD: 512GB, VGA: AMD Radeon Vega 8" data-price="12,000,000 VND" data-availability="Hàng sẵn sàng" data-image="image/a14.jpg" onclick="showDetails(this)">
+                <img src="image/a14.jpg" alt="Lenovo IdeaCentre 3">
+                <h3>Lenovo IdeaCentre 3</h3>
+                <p>CPU: AMD Ryzen 5 3500U, RAM: 8GB, SSD: 512GB, VGA: AMD Radeon Vega 8</p>
+                <p>Giá: 12,000,000 VND</p>
+                <a href="checkout.html" class="purchase-button">Mua Ngay</a>
+                <a href="#" class="add-to-cart-button" data-url="checkout.html">
+                    <img src="https://png.pngtree.com/png-vector/20191030/ourlarge/pngtree-cart-plain-shoping-trolly-icon-vector-illustration-for-web-png-image_1927620.jpg" alt="Giỏ hàng">
+                </a>
+                <p><strong style="color: green;">Hàng sẵn sàng</strong></p>
+            </div>
+            <div class="product" data-name="Lenovo Legion T5" data-specs="CPU: Intel i5-10400, RAM: 16GB, SSD: 512GB, VGA: NVIDIA GTX 1660 Super" data-price="25,000,000 VND" data-availability="Hàng sẵn sàng" data-image="image/a68.jpg" onclick="showDetails(this)">
+                <img src="image/a68.jpg" alt="Lenovo Legion T5">
+                <h3>Lenovo Legion T5</h3>
+                <p>CPU: Intel i5-10400, RAM: 16GB, SSD: 512GB, VGA: NVIDIA GTX 1660 Super</p>
+                <p>Giá: 25,000,000 VND</p>
+                <a href="checkout.html" class="purchase-button">Mua Ngay</a>
+                <a href="#" class="add-to-cart-button" data-url="checkout.html">
+                    <img src="https://png.pngtree.com/png-vector/20191030/ourlarge/pngtree-cart-plain-shoping-trolly-icon-vector-illustration-for-web-png-image_1927620.jpg" alt="Giỏ hàng">
+                </a>
+                <p><strong style="color: green;">Hàng sẵn sàng</strong></p>
+            </div>
+            <div class="product" data-name="Dell OptiPlex 3080" data-specs="CPU: Intel i5-10500, RAM: 8GB, SSD: 512GB, VGA: Intel UHD Graphics 630" data-price="18,000,000 VND" data-availability="Hàng sẵn sàng" data-image="image/a69.jpg" onclick="showDetails(this)">
+                <img src="image/a69.jpg" alt="Dell OptiPlex 3080">
+                <h3>Dell OptiPlex 3080</h3>
+                <p>CPU: Intel i5-10500, RAM: 8GB, SSD: 512GB, VGA: Intel UHD Graphics 630</p>
+                <p>Giá: 18,000,000 VND</p>
+                <a href="checkout.html" class="purchase-button">Mua Ngay</a>
+                <a href="#" class="add-to-cart-button" data-url="checkout.html">
+                    <img src="https://png.pngtree.com/png-vector/20191030/ourlarge/pngtree-cart-plain-shoping-trolly-icon-vector-illustration-for-web-png-image_1927620.jpg" alt="Giỏ hàng">
+                </a>
+                <p><strong style="color: green;">Hàng sẵn sàng</strong></p>
+            </div>
+            <div class="product" data-name="Dell XPS Desktop" data-specs="CPU: Intel i7-11700, RAM: 16GB, SSD: 1TB, VGA: NVIDIA GTX 1660 Ti" data-price="35,000,000 VND" data-availability="Hàng sẵn sàng" data-image="image/a70.jpg" onclick="showDetails(this)">
+                <img src="image/a70.jpg" alt="Dell XPS Desktop">
+                <h3>Dell XPS Desktop</h3>
+                <p>CPU: Intel i7-11700, RAM: 16GB, SSD: 1TB, VGA: NVIDIA GTX 1660 Ti</p>
+                <p>Giá: 35,000,000 VND</p>
+                <a href="checkout.html" class="purchase-button">Mua Ngay</a>
+                <a href="#" class="add-to-cart-button" data-url="checkout.html">
+                    <img src="https://png.pngtree.com/png-vector/20191030/ourlarge/pngtree-cart-plain-shoping-trolly-icon-vector-illustration-for-web-png-image_1927620.jpg" alt="Giỏ hàng">
+                </a>
+                <p><strong style="color: green;">Hàng sẵn sàng</strong></p>
+            </div>
+            <div class="product" data-name="Dell Inspiron Desktop 3880" data-specs="CPU: Intel i5-10400, RAM: 8GB, SSD: 512GB, VGA: Intel UHD Graphics 630" data-price="14,000,000 VND" data-availability="Hàng sẵn sàng" data-image="image/a71.jpg" onclick="showDetails(this)">
+                <img src="image/a71.jpg" alt="Dell Inspiron Desktop 3880">
+                <h3>Dell Inspiron Desktop 3880</h3>
+                <p>CPU: Intel i5-10400, RAM: 8GB, SSD: 512GB, VGA: Intel UHD Graphics 630</p>
+                <p>Giá: 14,000,000 VND</p>
+                <a href="checkout.html" class="purchase-button">Mua Ngay</a>
+                <a href="#" class="add-to-cart-button" data-url="checkout.html">
+                    <img src="https://png.pngtree.com/png-vector/20191030/ourlarge/pngtree-cart-plain-shoping-trolly-icon-vector-illustration-for-web-png-image_1927620.jpg" alt="Giỏ hàng">
+                </a>
+                <p><strong style="color: green;">Hàng sẵn sàng</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bảng chi tiết sản phẩm -->
+<div id="details" class="popup" style="display:none;">
+    <span class="close" onclick="hideDetails()" style="cursor: pointer;">&times;</span> 
+    <img id="details-image" src="" alt="Hình ảnh sản phẩm">
+    <h3 id="details-name"></h3>
+    <p id="details-specs"></p>
+    <p id="details-price"></p>
+    <p id="details-availability"></p>
+</div>
+    <!-- Phần footer -->
+    <footer>
+        <p>&copy; 2024 Cửa Hàng Bán PC & Laptop Cao Cấp. Thiết kế bởi [Team 4 Ae]</p>
+    </footer>
+  
+ <!-- Liên kết tệp JavaScript ở đây -->
+ <script src="JS/Tong.js"></script>
+
+</body>
+</html>
